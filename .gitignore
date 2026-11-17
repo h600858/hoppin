@@ -1,0 +1,13 @@
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+node_modules/
+functions/lib/
+.firebase/
+*-debug.log
+.env
+*.local
+Thumbs.db

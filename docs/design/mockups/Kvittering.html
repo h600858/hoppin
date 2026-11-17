@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<title>Fravær meldt</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Figtree,system-ui,sans-serif;color:#16271F;background:#F3F9F5}
+a{color:#2D7D5A}a:hover{color:#1F5C41}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F9F5; font-family: Figtree, system-ui, sans-serif; color: #16271F; display: flex; flex-direction: column">
+  <header style="background: #4CAE7D; padding: 18px 20px 16px; display: flex; align-items: center; gap: 8px">
+    <div style="display: flex; flex-direction: column; flex-grow: 1">
+      <span style="font-size: 19px; font-weight: 700">Bjørkelia skole</span>
+      <span style="font-size: 14px; color: #1E3A2C">Innhopp</span>
+    </div>
+  </header>
+
+  <div style="flex-grow: 1; padding: 28px 16px 16px; display: flex; flex-direction: column; gap: 18px">
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 0 4px">
+      <div style="width: 56px; height: 56px; border-radius: 99px; background: #E6F3EA; color: #2D7D5A; display: flex; align-items: center; justify-content: center">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+      </div>
+      <h1 style="margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.4px">Fraværet er meldt</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #3E4B46">Du trenger ikke gjøre noe mer. Første forespørsel til vikarer går ut <b style="color: #16271F">kl. 06:30</b> i morgen.</p>
+    </div>
+
+    <section style="background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 16px; padding: 6px 16px; display: flex; flex-direction: column">
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 64px; border-bottom: 1px solid #EEF3F0">
+        <div style="display: flex; flex-direction: column; width: 52px"><span style="font-size: 15px; font-weight: 700">08:30</span><span style="font-size: 13px; color: #56635E">09:15</span></div>
+        <span style="font-size: 15px; font-weight: 600; flex-grow: 1">5B · Matematikk</span>
+        <span style="font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 6px; background: #F1F3F2; color: #4A5652">VENTER</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 64px; border-bottom: 1px solid #EEF3F0">
+        <div style="display: flex; flex-direction: column; width: 52px"><span style="font-size: 15px; font-weight: 700">09:15</span><span style="font-size: 13px; color: #56635E">10:00</span></div>
+        <span style="font-size: 15px; font-weight: 600; flex-grow: 1">5B · Norsk</span>
+        <span style="font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 6px; background: #F1F3F2; color: #4A5652">VENTER</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; min-height: 64px">
+        <div style="display: flex; flex-direction: column; width: 52px"><span style="font-size: 15px; font-weight: 700">12:15</span><span style="font-size: 13px; color: #56635E">13:00</span></div>
+        <span style="font-size: 15px; font-weight: 600; flex-grow: 1">6A · Engelsk</span>
+        <span style="font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 6px; background: #F1F3F2; color: #4A5652">VENTER</span>
+      </div>
+    </section>
+
+    <p style="margin: 0; padding: 0 4px; font-size: 14px; line-height: 1.5; color: #56635E">Du får en melding når timene er dekket. Skolen ser status fortløpende.</p>
+  </div>
+
+  <div style="padding: 16px 16px 32px; display: flex; flex-direction: column; gap: 10px">
+    <button style="height: 58px; border-radius: 99px; border: 0; background: #16271F; color: #FFFFFF; font-size: 17px; font-weight: 700">Ferdig</button>
+    <button style="height: 52px; border-radius: 99px; border: 1px solid #DDE7E1; background: #FFFFFF; color: #16271F; font-size: 16px; font-weight: 600">Jeg er frisk likevel, trekk meldingen</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

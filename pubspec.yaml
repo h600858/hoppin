@@ -1,0 +1,10 @@
+name: innhopp_workspace
+publish_to: none
+environment:
+  sdk: ^3.7.0   # sett til din Dart-versjon etter flutter upgrade
+workspace:
+  - apps/mobile
+  - apps/admin_web
+  - packages/domain
+  - packages/data
+  - packages/ui

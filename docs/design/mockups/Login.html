@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<title>Innlogging</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Figtree,system-ui,sans-serif;color:#16271F;background:#F3F9F5}
+a{color:#2D7D5A}a:hover{color:#1F5C41}
+button,input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F9F5; font-family: Figtree, system-ui, sans-serif; color: #16271F; display: flex; flex-direction: column; padding: 96px 24px 40px">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <div style="width: 48px; height: 48px; border-radius: 14px; background: #4CAE7D; display: flex; align-items: center; justify-content: center; color: #16271F; font-weight: 800; font-size: 26px">i</div>
+    <span style="font-size: 28px; font-weight: 800; letter-spacing: -0.4px">Innhopp</span>
+  </div>
+  <h1 style="margin: 48px 0 0; font-size: 32px; line-height: 1.15; font-weight: 800; letter-spacing: -0.5px">Logg inn med telefonnummeret ditt</h1>
+  <p style="margin: 12px 0 0; font-size: 17px; line-height: 1.5; color: #4A5652">Vi sender deg en kode på SMS. Bruk samme nummer som skolen har registrert på deg.</p>
+
+  <label for="tlf" style="margin-top: 36px; font-size: 14px; font-weight: 700">Mobilnummer</label>
+  <div style="margin-top: 8px; display: flex; height: 58px; background: #FFFFFF; border: 1.5px solid #2D7D5A; border-radius: 14px; overflow: hidden">
+    <span style="display: flex; align-items: center; padding: 0 16px; font-size: 18px; font-weight: 600; border-right: 1px solid #DDE7E1; color: #4A5652">+47</span>
+    <input id="tlf" type="tel" inputmode="numeric" value="412 34 567" style="flex-grow: 1; border: 0; outline: none; padding: 0 16px; font-size: 20px; font-weight: 600; letter-spacing: 0.5px; color: #16271F; background: transparent">
+  </div>
+
+  <button style="margin-top: 20px; height: 58px; border: 0; border-radius: 99px; background: #2D7D5A; color: #FFFFFF; font-size: 18px; font-weight: 700">Send kode</button>
+
+  <div style="margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 8px">
+    <span style="font-size: 14px; color: #56635E; text-align: center; line-height: 1.5">Er du ikke registrert? Ta kontakt med skolen.</span>
+    <a href="#" style="font-size: 14px; font-weight: 600">Slik behandler vi dine data</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
