@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Steg 1: alt er stengt. Samlinger åpnes én og én i steg 4.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
