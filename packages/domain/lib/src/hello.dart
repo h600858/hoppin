@@ -7,8 +7,8 @@ class HelloResult {
         required this.serverTime,
     });
 
-    final string message;
-    final string region;
+    final String message;
+    final String region;
     final DateTime serverTime;
 
     factory HelloResult.fromMap(Map<Object?, Object?> map){
@@ -16,7 +16,7 @@ class HelloResult {
         final region = map['region'] ;
         final serverTime = map['serverTime'] ;
 
-        if(message is! string || region is! string || serverTime is! string){
+        if(message is! String || region is! String || serverTime is! String){
             throw FormatException('Invalid map: $map');
         }
 
@@ -29,5 +29,5 @@ class HelloResult {
 }
 
 abstract interface class HelloService {
-    Future<HelloResult> hello(string? name);
+    Future<HelloResult> hello({String? name});
 }
