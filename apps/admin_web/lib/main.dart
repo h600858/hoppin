@@ -14,7 +14,7 @@ class AdminApp extends StatelessWidget {
   const AdminApp({super.key, required this.helloService});
 
   final HelloService helloService;
-
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hoppin',
