@@ -6,9 +6,10 @@ import 'package:ui/ui.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await InnhoppBackend.init(BackendConfig.fromEnvironment());
-  runApp(AdminApp(helloService: FirebaseHelloService(InnhoppBackend.functions)));
+  runApp(
+    AdminApp(helloService: FirebaseHelloService(InnhoppBackend.functions)),
+  );
 }
-
 
 class AdminApp extends StatelessWidget {
   const AdminApp({super.key, required this.helloService});
@@ -18,7 +19,10 @@ class AdminApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hoppin',
-      home: ConnectionCheckView(service: helloService, appName: 'Innhopp admin'),
+      home: ConnectionCheckView(
+        service: helloService,
+        appName: 'Innhopp admin',
+      ),
     );
   }
 }

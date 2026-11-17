@@ -8,9 +8,9 @@ class FirebaseHelloService implements HelloService {
 
   @override
   Future<HelloResult> hello({String? name}) async {
-    final result = await _functions
-        .httpsCallable('hello')
-        .call<Object?>({if (name != null) 'name': name});
+    final result = await _functions.httpsCallable('hello').call<Object?>({
+      if (name != null) 'name': name,
+    });
     final data = result.data;
     if (data is! Map) {
       throw FormatException('Uventet svar fra hello', data);

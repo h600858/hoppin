@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 /// Temporary start screen: proves the app reaches the backend.
 /// Replaced by the real screens in step 6 and 9.
 class ConnectionCheckView extends StatefulWidget {
-  const ConnectionCheckView({super.key, required this.service, required this.appName});
+  const ConnectionCheckView({
+    super.key,
+    required this.service,
+    required this.appName,
+  });
 
   final HelloService service;
   final String appName;
@@ -46,11 +50,17 @@ class _ConnectionCheckViewState extends State<ConnectionCheckView> {
                 return Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Fikk ikke kontakt med backend', style: text.titleLarge),
+                    Text(
+                      'Fikk ikke kontakt med backend',
+                      style: text.titleLarge,
+                    ),
                     const SizedBox(height: 8),
                     Text(snapshot.error.toString(), style: text.bodyMedium),
                     const SizedBox(height: 16),
-                    ElevatedButton(onPressed: _retry, child: const Text('Prøv igjen')),
+                    ElevatedButton(
+                      onPressed: _retry,
+                      child: const Text('Prøv igjen'),
+                    ),
                   ],
                 );
               }
@@ -61,7 +71,10 @@ class _ConnectionCheckViewState extends State<ConnectionCheckView> {
                   Text(result.message, style: text.headlineMedium),
                   const SizedBox(height: 8),
                   Text('Region: ${result.region}', style: text.bodyMedium),
-                  Text('Tjenertid: ${result.serverTime.toLocal()}', style: text.bodyMedium),
+                  Text(
+                    'Tjenertid: ${result.serverTime.toLocal()}',
+                    style: text.bodyMedium,
+                  ),
                 ],
               );
             },

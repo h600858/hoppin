@@ -5,10 +5,10 @@ import 'package:admin_web/main.dart';
 class _FakeHelloService implements HelloService {
   @override
   Future<HelloResult> hello({String? name}) async => HelloResult(
-        message: 'Hei, $name!',
-        region: 'europe-north1',
-        serverTime: DateTime.utc(2026, 11, 17),
-      );
+    message: 'Hei, $name!',
+    region: 'europe-north1',
+    serverTime: DateTime.utc(2026, 11, 17),
+  );
 }
 
 void main() {
