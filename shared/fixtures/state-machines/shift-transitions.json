@@ -1,0 +1,19 @@
+{
+  "statuses": [
+    "pending", "offering", "claimed", "confirmed", "completed",
+    "cancelled", "escalated", "manually_assigned", "unfilled", "withdrawn"
+  ],
+  "allowed": [
+    ["pending", "offering"],
+    ["pending", "withdrawn"],
+    ["offering", "claimed"],
+    ["offering", "escalated"],
+    ["offering", "withdrawn"],
+    ["claimed", "confirmed"],
+    ["claimed", "offering"],
+    ["claimed", "cancelled"],
+    ["confirmed", "completed"],
+    ["escalated", "manually_assigned"],
+    ["escalated", "unfilled"]
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "statuses": [
+    "queued", "sent", "accepted", "declined", "expired",
+    "superseded", "withdrawn", "undone"
+  ],
+  "allowed": [
+    ["queued", "sent"],
+    ["queued", "withdrawn"],
+    ["sent", "accepted"],
+    ["sent", "declined"],
+    ["sent", "expired"],
+    ["sent", "superseded"],
+    ["sent", "withdrawn"],
+    ["accepted", "undone"]
+  ]
+}
