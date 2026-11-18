@@ -114,7 +114,7 @@ apps/admin_web/     Flutter Web for administrator
 packages/domain/    ren Dart: modeller, enums, statusmaskin
 packages/data/      Firestore-repositorier, Firebase-oppkobling
 packages/ui/        tema (tokens fra design-system.md) og felles widgets
-functions/          Cloud Functions, TypeScript (kommer i steg 1.3)
+functions/          Cloud Functions, TypeScript
   src/matching/     matchemotoren
   src/domain/       statusmaskin, clock-provider
   src/dispatch/     bølger og utsending
@@ -133,19 +133,29 @@ Region `europe-north1`.
 
 ```powershell
 flutter pub get                 # i rota, løser hele workspacet
-flutter analyze                 # i rota
-flutter test                    # i en app eller pakke
+flutter analyze                 # i rota (functions/ er utelatt i analysis_options.yaml)
+dart format apps packages       # CI feiler på uformatert kode
+cd packages/domain; dart test   # ren Dart
+flutter test                    # i de andre pakkene og appene
 cd apps/admin_web; flutter run -d chrome
 cd apps/mobile; flutter run     # krever startet Android-emulator
-# fra steg 1.3:
-cd functions; npm test; npm run lint
-npx firebase emulators:start --project demo-innhopp
+
+cd functions
+npm run emulators               # bygger og starter alle emulatorene (demo-innhopp)
+npm run build:watch             # egen terminal: emulatoren laster ny kode automatisk
+npm test                        # enhetstester, uten emulator
+npm run test:emulator           # regeltester mot kjørende emulator (demo-innhopp-test)
+npm run typecheck; npm run lint
 ```
+
+Emulator UI: http://127.0.0.1:4000. CI: `.github/workflows/ci.yml` (Flutter 3.29.3,
+Node 24, JDK 21). Oppgraderes Flutter lokalt, må versjonen i CI endres samtidig.
 
 ## Pakker
 
-Godkjent: flutter_bloc, go_router, bloc_test, mocktail, flutter_lints, lints, Vitest.
-Foreslått, bekreftes når de installeres: firebase_core, firebase_auth, cloud_firestore,
-cloud_functions; i functions firebase-functions, firebase-admin, typescript, eslint,
-typescript-eslint, @firebase/rules-unit-testing, firebase, firebase-tools.
+Godkjent, Dart: flutter_bloc, go_router, bloc_test, mocktail, flutter_lints, lints,
+test, firebase_core, firebase_auth, cloud_firestore, cloud_functions.
+Godkjent, functions: firebase-functions, firebase-admin, typescript (~6.0, fordi
+typescript-eslint ikke støtter 7), @types/node, eslint, @eslint/js, typescript-eslint,
+vitest, @firebase/rules-unit-testing, firebase, firebase-tools.
 Ikke avgjort: serialisering (json_serializable eller håndskrevet), avgjøres i steg 2.
