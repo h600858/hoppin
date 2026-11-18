@@ -59,9 +59,15 @@ referanse, ikke kode som skal oversettes).
 
 ## Domenet i korte trekk
 
-Samlinger (plan kap. 6): tenants, schools, staff, substitutes, timetable, absences,
-shifts, offers, assignments, availability, weights, decisions, escalations.
-Hendelser i `shifts/{id}/events`.
+Samlinger (decisions/0006): tenants, schools, schoolConfigs, staff, substitutes,
+timetable, absences, shifts, offers, assignments, availability, decisions, escalations.
+Hendelser i `shifts/{id}/events`. Engelske feltnavn, norske verdier. Tidspunkt i UTC,
+klokkeslett `"HH:mm"` lokal tid, dato `"YYYY-MM-DD"` (se 0006).
+
+Ordliste: vikar = substitute, oppdrag = shift, forespørsel = offer, fravær = absence,
+tildeling = assignment, ansatt = staff, kommune = tenant, politiattest =
+policeCertificate, fag = subject, trinn = grade, klasse = className, bølge = wave,
+stilletid = quietHours, hastegrad = urgency, eskalering = escalation.
 
 Statusmaskin for shifts:
 ```
@@ -69,6 +75,13 @@ pending -> offering -> claimed -> confirmed -> completed
 claimed -> offering (angring innen 60 sek) | cancelled (vikar trekker seg)
 offering -> escalated -> manually_assigned | unfilled
 pending/offering -> withdrawn (læreren melder seg frisk)
+```
+
+Statusmaskin for offers (decisions/0007):
+```
+queued -> sent | withdrawn
+sent -> accepted | declined | expired | superseded | withdrawn
+accepted -> undone (angret, spørres ikke igjen)
 ```
 
 Bølgetabell (standard, redigerbar per skole):
@@ -157,5 +170,6 @@ Godkjent, Dart: flutter_bloc, go_router, bloc_test, mocktail, flutter_lints, lin
 test, firebase_core, firebase_auth, cloud_firestore, cloud_functions.
 Godkjent, functions: firebase-functions, firebase-admin, typescript (~6.0, fordi
 typescript-eslint ikke støtter 7), @types/node, eslint, @eslint/js, typescript-eslint,
-vitest, @firebase/rules-unit-testing, firebase, firebase-tools.
-Ikke avgjort: serialisering (json_serializable eller håndskrevet), avgjøres i steg 2.
+vitest, @firebase/rules-unit-testing, firebase, firebase-tools, ajv, ajv-formats,
+json-schema-to-typescript.
+Dart-modeller skrives for hånd, ingen json_serializable (decisions/0006).

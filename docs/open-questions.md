@@ -29,8 +29,14 @@ og datoen, og lag et beslutningsnotat hvis det påvirker arkitekturen.
 7. **Kritisk hastegrad mot regel 3.** «Alle kvalifiserte i én utsending» kolliderer med
    «høyst én forespørsel per kandidat per bølge» når flere kritiske oppdrag trenger de
    samme folkene. Hvilken regel vinner?
-8. **Statuser på tilbud (offers).** Planen nevner `superseded`, `for_sent` og utløpt,
-   men det finnes ingen statusmaskin for offers. Avklares i steg 2.
+8. ~~**Statuser på tilbud (offers).**~~ Besvart 2026-11-18, se decisions/0007.
+
+10. **Når en bekreftet vikar trekker seg.** Kontrakten sier `claimed -> cancelled`,
+    men i praksis trekker folk seg oftest etter `confirmed` (syk samme morgen). Skal
+    `confirmed -> cancelled` være lov, og skal oppdraget da fylles på nytt (tilbake til
+    `offering`) i stedet for å ende som `cancelled`? Og kan et `escalated` oppdrag bli
+    `withdrawn` hvis læreren blir frisk? Statusmaskinen følger kontrakten til dette er
+    avklart.
 
 ## Drift
 
