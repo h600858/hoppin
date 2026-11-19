@@ -7,17 +7,21 @@
     "node": "24"
   },
   "scripts": {
-  "build": "tsc -p tsconfig.build.json",
-  "build:watch": "tsc -p tsconfig.build.json --watch",
-  "typecheck": "tsc --noEmit",
-  "lint": "eslint src",
-  "test": "vitest run --project unit",
-  "test:watch": "vitest --project unit",
-  "test:emulator": "vitest run --project emulator",
-  "test:emulator:ci": "firebase emulators:exec --only firestore --project demo-innhopp-test \"npm run test:emulator\"",
-  "emulators": "npm run build && firebase emulators:start --project demo-innhopp"
-},
+    "build": "tsc -p tsconfig.build.json",
+    "build:watch": "tsc -p tsconfig.build.json --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run --project unit",
+    "test:watch": "vitest --project unit",
+    "test:emulator": "vitest run --project emulator",
+    "test:emulator:ci": "firebase emulators:exec --only firestore --project demo-innhopp-test \"npm run test:emulator\"",
+    "emulators": "npm run build && firebase emulators:start --project demo-innhopp",
+    "gen:types": "node scripts/gen-types.mjs",
+"check:generated": "npm run gen:types && git diff --exit-code -- src/generated"
+  },
   "dependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "firebase-admin": "^14.5.1",
     "firebase-functions": "^7.4.0"
   },
@@ -28,8 +32,10 @@
     "eslint": "^10.15.0",
     "firebase": "^13.4.0",
     "firebase-tools": "^15.36.0",
+    "json-schema-to-typescript": "^16.0.0",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.73.0",
     "vitest": "^5.1.0"
   }
+  
 }

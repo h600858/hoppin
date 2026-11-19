@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/offer.schema.json",
+  "title": "Offer",
+  "description": "One request to one substitute (forespørsel). Collection: offers. decisionId points to the matching run that chose the substitute (rule 8).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "shiftId", "substituteId", "decisionId", "wave",
+    "score", "reasons", "channel", "status", "createdAt", "sentAt", "expiresAt",
+    "respondedAt"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "shiftId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "substituteId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "decisionId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "wave": { "type": "integer", "minimum": 1 },
+    "score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "reasons": {
+      "description": "Short reasons in Norwegian, shown to the substitute.",
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 200 },
+      "maxItems": 5
+    },
+    "channel": { "$ref": "common.schema.json#/$defs/Channel" },
+    "status": { "$ref": "common.schema.json#/$defs/OfferStatus" },
+    "createdAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "sentAt": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Instant" }, { "type": "null" }]
+    },
+    "expiresAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "respondedAt": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Instant" }, { "type": "null" }]
+    }
+  }
+}

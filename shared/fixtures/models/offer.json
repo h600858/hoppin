@@ -1,0 +1,78 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "substituteId": "sub-kari",
+      "decisionId": "dec-001",
+      "wave": 1,
+      "score": 78.5,
+      "reasons": ["Har hatt 5B tolv ganger i høst", "Matematikk på mellomtrinnet"],
+      "channel": "push",
+      "status": "sent",
+      "createdAt": "2026-11-19T05:30:00.000Z",
+      "sentAt": "2026-11-19T05:30:02.000Z",
+      "expiresAt": "2026-11-19T06:00:00.000Z",
+      "respondedAt": null
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "substituteId": "sub-per",
+      "decisionId": "dec-001",
+      "wave": 1,
+      "score": 61,
+      "reasons": [],
+      "channel": "sms",
+      "status": "queued",
+      "createdAt": "2026-11-18T21:40:00.000Z",
+      "sentAt": null,
+      "expiresAt": "2026-11-19T06:00:00.000Z",
+      "respondedAt": null
+    }
+  ],
+  "invalid": [
+    {
+      "why": "status is a shift status, not an offer status",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "shiftId": "shift-001",
+        "substituteId": "sub-kari", "decisionId": "dec-001", "wave": 1, "score": 78,
+        "reasons": [], "channel": "push", "status": "claimed",
+        "createdAt": "2026-11-19T05:30:00.000Z", "sentAt": null,
+        "expiresAt": "2026-11-19T06:00:00.000Z", "respondedAt": null
+      }
+    },
+    {
+      "why": "score above 100",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "shiftId": "shift-001",
+        "substituteId": "sub-kari", "decisionId": "dec-001", "wave": 1, "score": 120,
+        "reasons": [], "channel": "push", "status": "sent",
+        "createdAt": "2026-11-19T05:30:00.000Z", "sentAt": null,
+        "expiresAt": "2026-11-19T06:00:00.000Z", "respondedAt": null
+      }
+    },
+    {
+      "why": "wave starts at 1",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "shiftId": "shift-001",
+        "substituteId": "sub-kari", "decisionId": "dec-001", "wave": 0, "score": 78,
+        "reasons": [], "channel": "push", "status": "sent",
+        "createdAt": "2026-11-19T05:30:00.000Z", "sentAt": null,
+        "expiresAt": "2026-11-19T06:00:00.000Z", "respondedAt": null
+      }
+    },
+    {
+      "why": "unknown channel",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "shiftId": "shift-001",
+        "substituteId": "sub-kari", "decisionId": "dec-001", "wave": 1, "score": 78,
+        "reasons": [], "channel": "email", "status": "sent",
+        "createdAt": "2026-11-19T05:30:00.000Z", "sentAt": null,
+        "expiresAt": "2026-11-19T06:00:00.000Z", "respondedAt": null
+      }
+    }
+  ]
+}

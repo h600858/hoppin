@@ -1,0 +1,98 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "absenceId": "abs-001",
+      "date": "2026-11-19",
+      "startsAt": "2026-11-19T07:30:00.000Z",
+      "endsAt": "2026-11-19T09:00:00.000Z",
+      "role": "laerer",
+      "className": "5B",
+      "subject": "matematikk",
+      "grade": 5,
+      "requiresFormalCompetence": false,
+      "status": "offering",
+      "deadlineAt": "2026-11-19T06:45:00.000Z",
+      "assignedSubstituteId": null,
+      "assignedAt": null,
+      "createdAt": "2026-11-18T19:12:00.000Z"
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "absenceId": "abs-002",
+      "date": "2026-11-19",
+      "startsAt": "2026-11-19T12:00:00.000Z",
+      "endsAt": "2026-11-19T15:30:00.000Z",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "requiresFormalCompetence": false,
+      "status": "confirmed",
+      "deadlineAt": null,
+      "assignedSubstituteId": "sub-kari",
+      "assignedAt": "2026-11-18T20:01:00.000Z",
+      "createdAt": "2026-11-18T19:40:00.000Z"
+    }
+  ],
+  "invalid": [
+    {
+      "why": "status is not a shift status",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "absenceId": "abs-001",
+        "date": "2026-11-19", "startsAt": "2026-11-19T07:30:00.000Z",
+        "endsAt": "2026-11-19T09:00:00.000Z", "role": "laerer", "className": "5B",
+        "subject": "matematikk", "grade": 5, "requiresFormalCompetence": false,
+        "status": "sent", "deadlineAt": null, "assignedSubstituteId": null,
+        "assignedAt": null, "createdAt": "2026-11-18T19:12:00.000Z"
+      }
+    },
+    {
+      "why": "startsAt is a local time, not an instant",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "absenceId": "abs-001",
+        "date": "2026-11-19", "startsAt": "08:30",
+        "endsAt": "2026-11-19T09:00:00.000Z", "role": "laerer", "className": "5B",
+        "subject": "matematikk", "grade": 5, "requiresFormalCompetence": false,
+        "status": "pending", "deadlineAt": null, "assignedSubstituteId": null,
+        "assignedAt": null, "createdAt": "2026-11-18T19:12:00.000Z"
+      }
+    },
+    {
+      "why": "unknown field (absent teacher's name must never be stored on a shift)",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "absenceId": "abs-001",
+        "date": "2026-11-19", "startsAt": "2026-11-19T07:30:00.000Z",
+        "endsAt": "2026-11-19T09:00:00.000Z", "role": "laerer", "className": "5B",
+        "subject": "matematikk", "grade": 5, "requiresFormalCompetence": false,
+        "status": "pending", "deadlineAt": null, "assignedSubstituteId": null,
+        "assignedAt": null, "createdAt": "2026-11-18T19:12:00.000Z",
+        "absentTeacherName": "Ola Nordmann"
+      }
+    },
+    {
+      "why": "grade outside 1 to 10",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "absenceId": "abs-001",
+        "date": "2026-11-19", "startsAt": "2026-11-19T07:30:00.000Z",
+        "endsAt": "2026-11-19T09:00:00.000Z", "role": "laerer", "className": "5B",
+        "subject": "matematikk", "grade": 11, "requiresFormalCompetence": false,
+        "status": "pending", "deadlineAt": null, "assignedSubstituteId": null,
+        "assignedAt": null, "createdAt": "2026-11-18T19:12:00.000Z"
+      }
+    },
+    {
+      "why": "missing required field status",
+      "doc": {
+        "tenantId": "bergen", "schoolId": "bjorkelia", "absenceId": "abs-001",
+        "date": "2026-11-19", "startsAt": "2026-11-19T07:30:00.000Z",
+        "endsAt": "2026-11-19T09:00:00.000Z", "role": "laerer", "className": "5B",
+        "subject": "matematikk", "grade": 5, "requiresFormalCompetence": false,
+        "deadlineAt": null, "assignedSubstituteId": null,
+        "assignedAt": null, "createdAt": "2026-11-18T19:12:00.000Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/shift.schema.json",
+  "title": "Shift",
+  "description": "One shift to fill (oppdrag). Collection: shifts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "absenceId", "date", "startsAt", "endsAt", "role",
+    "className", "subject", "grade", "requiresFormalCompetence", "status",
+    "deadlineAt", "assignedSubstituteId", "assignedAt", "createdAt"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "absenceId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "date": { "$ref": "common.schema.json#/$defs/LocalDate" },
+    "startsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "endsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "role": { "$ref": "common.schema.json#/$defs/Role" },
+    "className": {
+      "description": "Null for shifts without a class, for example SFO.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/ClassName" }, { "type": "null" }]
+    },
+    "subject": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Subject" }, { "type": "null" }]
+    },
+    "grade": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Grade" }, { "type": "null" }]
+    },
+    "requiresFormalCompetence": { "type": "boolean" },
+    "status": { "$ref": "common.schema.json#/$defs/ShiftStatus" },
+    "deadlineAt": {
+      "description": "When the shift escalates to a person. Null until offering starts.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Instant" }, { "type": "null" }]
+    },
+    "assignedSubstituteId": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "assignedAt": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Instant" }, { "type": "null" }]
+    },
+    "createdAt": { "$ref": "common.schema.json#/$defs/Instant" }
+  }
+}
