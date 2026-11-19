@@ -1,4 +1,6 @@
-enum OfferStatus {
+import 'json/wire_enum.dart';
+
+enum OfferStatus implements WireEnum {
   queued('queued'),
   sent('sent'),
   accepted('accepted'),
@@ -11,6 +13,7 @@ enum OfferStatus {
   const OfferStatus(this.value);
 
   /// The value stored in Firestore.
+  @override
   final String value;
 
   static OfferStatus fromValue(String value) => OfferStatus.values.firstWhere(

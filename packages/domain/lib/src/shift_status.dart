@@ -1,4 +1,6 @@
-enum ShiftStatus {
+import 'json/wire_enum.dart';
+
+enum ShiftStatus implements WireEnum {
   pending('pending'),
   offering('offering'),
   claimed('claimed'),
@@ -13,6 +15,7 @@ enum ShiftStatus {
   const ShiftStatus(this.value);
 
   /// The value stored in Firestore.
+  @override
   final String value;
 
   static ShiftStatus fromValue(String value) => ShiftStatus.values.firstWhere(
