@@ -17,7 +17,8 @@
     "test:emulator:ci": "firebase emulators:exec --only firestore --project demo-innhopp-test \"npm run test:emulator\"",
     "emulators": "npm run build && firebase emulators:start --project demo-innhopp",
     "gen:types": "node scripts/gen-types.mjs",
-    "check:generated": "npm run gen:types && git diff --exit-code -- src/generated"
+    "check:generated": "npm run gen:types && git diff --exit-code -- src/generated",
+    "seed": "npm run build && node ../scripts/seed/seed.mjs"
   },
   "dependencies": {
     "ajv": "^8.20.0",

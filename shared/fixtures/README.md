@@ -1,6 +1,12 @@
 # Testdata
 
-Kommer i steg 2 og 3: JSON-filer som brukes av både Dart- og TypeScript-testene,
-for eksempel gyldige og ugyldige dokumenter per samling og matchetilfeller
-(seks klasser mot fem sterke vikarer, utløpt politiattest, tidskollisjon, kaldstart).
-All data er fiktiv.
+JSON som brukes av både Dart- og TypeScript-testene. All data er fiktiv.
+
+- `state-machines/`: lovlige overganger for oppdrag og tilbud.
+- `models/<modell>.json`: gyldige og ugyldige eksempler per samling, med `why` som
+  forklarer hvorfor et eksempel er ugyldig.
+- `callables/callables.json`: gyldige og ugyldige eksempler for hver forespørsel og
+  respons i `shared/schema/callables.json`.
+- `bjorkelia/`: seed-dataene for Bjørkelia skole, én fil per samling (se
+  `scripts/seed/`).
+- Matchetilfeller kommer i steg 3.

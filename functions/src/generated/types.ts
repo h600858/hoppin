@@ -4,6 +4,7 @@
  * Firestore document ID.
  */
 export type DocumentId = string;
+export type ClaimShiftResponse = ClaimShiftAccepted | ClaimShiftRejected;
 /**
  * Point in time, UTC, ISO 8601. Stored as Firestore Timestamp.
  */
@@ -62,8 +63,27 @@ export type OfferStatus =
   "queued" | "sent" | "accepted" | "declined" | "expired" | "superseded" | "withdrawn" | "undone";
 export type SubstituteStatus = "active" | "paused" | "left";
 export type Channel = "push" | "sms";
+export type HardFilterName =
+  | "police_certificate"
+  | "inactive"
+  | "role"
+  | "time_collision"
+  | "class_block"
+  | "working_time_limit"
+  | "formal_competence"
+  | "already_asked";
+export type EscalationResolution =
+  "manual_assignment" | "internal_staff" | "merged_groups" | "other_internal" | "withdrawn";
 
 export interface AllSchemas {
+  ClaimShiftRequest?: ClaimShiftRequest;
+  ClaimShiftResponse?: ClaimShiftResponse;
+  UndoClaimRequest?: UndoClaimRequest;
+  UndoClaimResponse?: UndoClaimResponse;
+  DeclineOfferRequest?: DeclineOfferRequest;
+  DeclineOfferResponse?: DeclineOfferResponse;
+  WithdrawAbsenceRequest?: WithdrawAbsenceRequest;
+  WithdrawAbsenceResponse?: WithdrawAbsenceResponse;
   DocumentId?: DocumentId;
   Instant?: Instant;
   LocalDate?: LocalDate;
@@ -79,13 +99,53 @@ export interface AllSchemas {
   SubstituteStatus?: SubstituteStatus;
   Channel?: Channel;
   Absence?: Absence;
+  Assignment?: Assignment;
+  Availability?: Availability;
+  Decision?: Decision;
+  Escalation?: Escalation;
   Offer?: Offer;
   School?: School;
   SchoolConfig?: SchoolConfig;
   Shift?: Shift;
+  ShiftEvent?: ShiftEvent;
   Staff?: Staff;
   Substitute?: Substitute;
+  Tenant?: Tenant;
   TimetableEntry?: TimetableEntry;
+}
+export interface ClaimShiftRequest {
+  offerId: DocumentId;
+  /**
+   * Unique per answer. Repeated calls with the same key give the same result.
+   */
+  idempotencyKey: string;
+}
+export interface ClaimShiftAccepted {
+  ok: true;
+  undoUntil: Instant;
+}
+export interface ClaimShiftRejected {
+  ok: false;
+  reason: "allerede_tatt" | "utloept" | "ikke_din";
+}
+export interface UndoClaimRequest {
+  offerId: DocumentId;
+}
+export interface UndoClaimResponse {
+  ok: boolean;
+}
+export interface DeclineOfferRequest {
+  offerId: DocumentId;
+  reason: "kan_ikke" | "utilgjengelig_hele_dagen";
+}
+export interface DeclineOfferResponse {
+  ok: true;
+}
+export interface WithdrawAbsenceRequest {
+  absenceId: DocumentId;
+}
+export interface WithdrawAbsenceResponse {
+  ok: true;
 }
 /**
  * A reported absence or a need created by an admin. Collection: absences. No reason category is stored (data minimisation). The comment is never part of outgoing messages (rule 11).
@@ -110,6 +170,140 @@ export interface Absence {
   status: "active" | "withdrawn";
   reportedAt: Instant;
   reportedBy: DocumentId;
+}
+/**
+ * A confirmed shift for one substitute. Collection: assignments. startsAt and endsAt are copied from the shift so a substitute's own assignments and time collisions can be queried directly.
+ */
+export interface Assignment {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  shiftId: DocumentId;
+  substituteId: DocumentId;
+  /**
+   * Null when an admin assigned the shift manually.
+   */
+  offerId: DocumentId | null;
+  source: "offer" | "manual";
+  startsAt: Instant;
+  endsAt: Instant;
+  confirmedAt: Instant;
+  /**
+   * Set when the substitute withdraws.
+   */
+  cancelledAt: Instant | null;
+  /**
+   * Null until the school has registered attendance.
+   */
+  attended: boolean | null;
+  /**
+   * The school's feedback. Personal data about the substitute, visible on access request (plan 6.2).
+   */
+  feedback: AssignmentFeedback | null;
+}
+export interface AssignmentFeedback {
+  rating: number;
+  comment: string | null;
+  givenBy: DocumentId;
+  givenAt: Instant;
+}
+/**
+ * A period the substitute has marked. Collection: availability. Busy time from assignments is derived, not stored here. No reason is stored.
+ */
+export interface Availability {
+  tenantId: DocumentId;
+  substituteId: DocumentId;
+  kind: "unavailable" | "available";
+  startsAt: Instant;
+  endsAt: Instant;
+  /**
+   * substitute: set in the app or via the SMS answer page. admin: set in the admin web app.
+   */
+  source: "substitute" | "admin";
+  createdAt: Instant;
+}
+/**
+ * Audit log of one matching run for one shift (rule 8). Collection: decisions. All shifts in the same run share runId and inputHash.
+ */
+export interface Decision {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  shiftId: DocumentId;
+  runId: DocumentId;
+  wave: number;
+  /**
+   * SHA-256 of the full input to the run, hex.
+   */
+  inputHash: string;
+  algorithmVersion: string;
+  /**
+   * Version of schoolConfigs/{schoolId} that was used.
+   */
+  configVersion: number;
+  createdAt: Instant;
+  /**
+   * Every candidate considered, also those excluded by a hard filter.
+   */
+  candidates: DecisionCandidate[];
+}
+export interface DecisionCandidate {
+  substituteId: DocumentId;
+  /**
+   * The first hard filter that excluded the candidate, or null.
+   */
+  excludedBy: HardFilterName | null;
+  /**
+   * Total score 0 to 100. Null when excluded.
+   */
+  score: number | null;
+  /**
+   * Sub-score per component, each 0 to 1. Null when excluded.
+   */
+  components: ScoreComponents | null;
+  /**
+   * Whether the global assignment picked this candidate for an offer.
+   */
+  selected: boolean;
+}
+export interface ScoreComponents {
+  subjectMatch: number;
+  classFamiliarity: number;
+  acceptLikelihood: number;
+  reliability: number;
+  fairness: number;
+  preferenceMatch: number;
+  proximity: number;
+}
+/**
+ * A shift handed to a person after the deadline (plan 7.7). Collection: escalations.
+ */
+export interface Escalation {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  shiftId: DocumentId;
+  decisionId: DocumentId;
+  /**
+   * @minItems 1
+   */
+  notifiedStaffIds: DocumentId[];
+  /**
+   * The best remaining candidates, ranked, with a short reason each.
+   *
+   * @maxItems 5
+   */
+  suggestions: EscalationSuggestion[];
+  createdAt: Instant;
+  resolvedAt: Instant | null;
+  resolvedBy: DocumentId | null;
+  /**
+   * How it was solved, counted in the statistics. Null while open.
+   */
+  resolution: EscalationResolution | null;
+}
+export interface EscalationSuggestion {
+  substituteId: DocumentId;
+  rank: number;
+  score: number;
+  reason: string;
 }
 /**
  * One request to one substitute (forespørsel). Collection: offers. decisionId points to the matching run that chose the substitute (rule 8).
@@ -274,6 +468,30 @@ export interface Shift {
   createdAt: Instant;
 }
 /**
+ * One status change of a shift, written by transitionShift (rule 4). Collection: shifts/{shiftId}/events.
+ */
+export interface ShiftEvent {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  shiftId: DocumentId;
+  /**
+   * Null for the event that created the shift.
+   */
+  from: ShiftStatus | null;
+  to: ShiftStatus;
+  at: Instant;
+  actor: "system" | "substitute" | "staff" | "admin";
+  /**
+   * Who did it. Null when the system did it.
+   */
+  actorId: DocumentId | null;
+  offerId: DocumentId | null;
+  /**
+   * Short machine readable cause, for example claim, undo, deadline.
+   */
+  cause: string;
+}
+/**
  * A permanent employee who can report absence. Collection: staff.
  */
 export interface Staff {
@@ -364,6 +582,23 @@ export interface ClassBlock {
   className: ClassName;
   reason: string;
   since: LocalDate;
+}
+/**
+ * A municipality or private school owner (plan 10.1: the data controller). Collection: tenants. No real personal data may be stored before dataProcessingAgreementSignedOn is set.
+ */
+export interface Tenant {
+  name: string;
+  /**
+   * Norwegian organisation number, nine digits.
+   */
+  orgNumber: string;
+  contactName: string | null;
+  contactEmail: string | null;
+  agreementStatus: "pilot" | "active" | "ended";
+  /**
+   * Date the data processing agreement (GDPR art. 28) was signed.
+   */
+  dataProcessingAgreementSignedOn: LocalDate | null;
 }
 /**
  * One recurring lesson or duty for one staff member. Collection: timetable.

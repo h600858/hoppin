@@ -1,6 +1,6 @@
 # Status
 
-Sist oppdatert: 2026-11-17
+Sist oppdatert: 2026-11-19
 
 ## Gjort
 
@@ -23,11 +23,26 @@ Sist oppdatert: 2026-11-17
 - **1.6 CI og mapper:** GitHub Actions med tre jobber (Flutter, functions, regler).
   README i mapper som fylles senere. Repo: github.com/h600858/hoppin.
 
+**Steg 2: Datamodell** er ferdig på TypeScript-siden.
+
+- **2.1:** decisions/0006 (feltnavn, tid, struktur) og 0007 (statusmaskin for tilbud).
+- **2.2:** statusmaskiner for oppdrag og tilbud i TypeScript og Dart, testet mot
+  `shared/fixtures/state-machines/`.
+- **2.3 og 2.5:** JSON Schema for alle 14 samlinger og `callables.json`.
+  TypeScript-typer genereres med `npm run gen:types`, og `validate` og
+  `validateCallable` sjekker data mot skjemaene med ajv.
+- **2.4 og 2.5:** Dart-modeller for alle 14 samlinger i `packages/domain`, med
+  `FieldReader` som sjekker de samme reglene som skjemaene. **Ikke verifisert
+  ennå:** Dart-delen er skrevet uten tilgang til Dart og ligger ukommittet. Kjør
+  `dart format`, `dart test` og `flutter analyze` før commit.
+- **2.6:** seed for Bjørkelia skole (`npm run seed`), data i
+  `shared/fixtures/bjorkelia/`, validert og sjekket for sammenheng i testene.
+
 ## Neste steg
 
-**Steg 2: Datamodell.** JSON Schema i `shared/schema/`, Dart-modeller i
-`packages/domain`, TypeScript-typer i functions, statusmaskin for shifts i begge
-språk, felles testdata i `shared/fixtures/`, og seed for Bjørkelia skole.
+1. Verifiser og commit Dart-modellene (se over).
+2. Kjør `npm run seed` mot emulatoren og se dataene i Emulator UI.
+3. **Steg 3: Matchemotoren** i `functions/src/matching/`, med tester først.
 
 ## Kjente problemer
 

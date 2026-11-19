@@ -1,0 +1,55 @@
+{
+  "valid": [
+    {
+      "name": "Fjellvik kommune",
+      "orgNumber": "999888777",
+      "contactName": "Kari Kontakt",
+      "contactEmail": "kontakt@example.com",
+      "agreementStatus": "pilot",
+      "dataProcessingAgreementSignedOn": "2026-10-01"
+    },
+    {
+      "name": "Fjellvik kommune",
+      "orgNumber": "999888777",
+      "contactName": null,
+      "contactEmail": null,
+      "agreementStatus": "pilot",
+      "dataProcessingAgreementSignedOn": null
+    }
+  ],
+  "invalid": [
+    {
+      "why": "organisation number has nine digits",
+      "doc": {
+        "name": "Fjellvik kommune",
+        "orgNumber": "99988877",
+        "contactName": "Kari Kontakt",
+        "contactEmail": "kontakt@example.com",
+        "agreementStatus": "pilot",
+        "dataProcessingAgreementSignedOn": "2026-10-01"
+      }
+    },
+    {
+      "why": "unknown agreement status",
+      "doc": {
+        "name": "Fjellvik kommune",
+        "orgNumber": "999888777",
+        "contactName": "Kari Kontakt",
+        "contactEmail": "kontakt@example.com",
+        "agreementStatus": "aktiv",
+        "dataProcessingAgreementSignedOn": "2026-10-01"
+      }
+    },
+    {
+      "why": "agreement date is a date, not an instant",
+      "doc": {
+        "name": "Fjellvik kommune",
+        "orgNumber": "999888777",
+        "contactName": "Kari Kontakt",
+        "contactEmail": "kontakt@example.com",
+        "agreementStatus": "pilot",
+        "dataProcessingAgreementSignedOn": "2026-10-01T00:00:00.000Z"
+      }
+    }
+  ]
+}

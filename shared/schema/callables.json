@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/callables.json",
+  "title": "Callables",
+  "description": "Contract for the callable functions. Each callable has a <Name>Request and a <Name>Response definition. Callables validate their input against the request definition (step 4).",
+  "$defs": {
+    "ClaimShiftRequest": {
+      "title": "ClaimShiftRequest",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["offerId", "idempotencyKey"],
+      "properties": {
+        "offerId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+        "idempotencyKey": {
+          "description": "Unique per answer. Repeated calls with the same key give the same result.",
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 128
+        }
+      }
+    },
+    "ClaimShiftResponse": {
+      "title": "ClaimShiftResponse",
+      "oneOf": [
+        {
+          "title": "ClaimShiftAccepted",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ok", "undoUntil"],
+          "properties": {
+            "ok": { "const": true },
+            "undoUntil": { "$ref": "common.schema.json#/$defs/Instant" }
+          }
+        },
+        {
+          "title": "ClaimShiftRejected",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ok", "reason"],
+          "properties": {
+            "ok": { "const": false },
+            "reason": { "type": "string", "enum": ["allerede_tatt", "utloept", "ikke_din"] }
+          }
+        }
+      ]
+    },
+    "UndoClaimRequest": {
+      "title": "UndoClaimRequest",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["offerId"],
+      "properties": {
+        "offerId": { "$ref": "common.schema.json#/$defs/DocumentId" }
+      }
+    },
+    "UndoClaimResponse": {
+      "title": "UndoClaimResponse",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok"],
+      "properties": {
+        "ok": { "type": "boolean" }
+      }
+    },
+    "DeclineOfferRequest": {
+      "title": "DeclineOfferRequest",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["offerId", "reason"],
+      "properties": {
+        "offerId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+        "reason": { "type": "string", "enum": ["kan_ikke", "utilgjengelig_hele_dagen"] }
+      }
+    },
+    "DeclineOfferResponse": {
+      "title": "DeclineOfferResponse",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok"],
+      "properties": {
+        "ok": { "const": true }
+      }
+    },
+    "WithdrawAbsenceRequest": {
+      "title": "WithdrawAbsenceRequest",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["absenceId"],
+      "properties": {
+        "absenceId": { "$ref": "common.schema.json#/$defs/DocumentId" }
+      }
+    },
+    "WithdrawAbsenceResponse": {
+      "title": "WithdrawAbsenceResponse",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok"],
+      "properties": {
+        "ok": { "const": true }
+      }
+    }
+  }
+}

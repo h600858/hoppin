@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/shiftEvent.schema.json",
+  "title": "ShiftEvent",
+  "description": "One status change of a shift, written by transitionShift (rule 4). Collection: shifts/{shiftId}/events.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tenantId", "schoolId", "shiftId", "from", "to", "at", "actor", "actorId", "offerId", "cause"],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "shiftId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "from": {
+      "description": "Null for the event that created the shift.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/ShiftStatus" }, { "type": "null" }]
+    },
+    "to": { "$ref": "common.schema.json#/$defs/ShiftStatus" },
+    "at": { "$ref": "common.schema.json#/$defs/Instant" },
+    "actor": { "type": "string", "enum": ["system", "substitute", "staff", "admin"] },
+    "actorId": {
+      "description": "Who did it. Null when the system did it.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "offerId": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "cause": {
+      "description": "Short machine readable cause, for example claim, undo, deadline.",
+      "type": "string",
+      "pattern": "^[a-z_]{1,40}$"
+    }
+  }
+}

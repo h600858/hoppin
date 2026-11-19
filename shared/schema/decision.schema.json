@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/decision.schema.json",
+  "title": "Decision",
+  "description": "Audit log of one matching run for one shift (rule 8). Collection: decisions. All shifts in the same run share runId and inputHash.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "shiftId", "runId", "wave", "inputHash",
+    "algorithmVersion", "configVersion", "createdAt", "candidates"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "shiftId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "runId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "wave": { "type": "integer", "minimum": 1 },
+    "inputHash": {
+      "description": "SHA-256 of the full input to the run, hex.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "algorithmVersion": { "type": "string", "minLength": 1, "maxLength": 40 },
+    "configVersion": {
+      "description": "Version of schoolConfigs/{schoolId} that was used.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "candidates": {
+      "description": "Every candidate considered, also those excluded by a hard filter.",
+      "type": "array",
+      "items": {
+        "title": "DecisionCandidate",
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["substituteId", "excludedBy", "score", "components", "selected"],
+        "properties": {
+          "substituteId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+          "excludedBy": {
+            "description": "The first hard filter that excluded the candidate, or null.",
+            "anyOf": [
+              {
+                "title": "HardFilterName",
+                "type": "string",
+                "enum": [
+                  "police_certificate", "inactive", "role", "time_collision",
+                  "class_block", "working_time_limit", "formal_competence",
+                  "already_asked"
+                ]
+              },
+              { "type": "null" }
+            ]
+          },
+          "score": {
+            "description": "Total score 0 to 100. Null when excluded.",
+            "anyOf": [{ "type": "number", "minimum": 0, "maximum": 100 }, { "type": "null" }]
+          },
+          "components": {
+            "description": "Sub-score per component, each 0 to 1. Null when excluded.",
+            "anyOf": [
+              {
+                "title": "ScoreComponents",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "subjectMatch", "classFamiliarity", "acceptLikelihood",
+                  "reliability", "fairness", "preferenceMatch", "proximity"
+                ],
+                "properties": {
+                  "subjectMatch": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "classFamiliarity": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "acceptLikelihood": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "reliability": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "fairness": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "preferenceMatch": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "proximity": { "type": "number", "minimum": 0, "maximum": 1 }
+                }
+              },
+              { "type": "null" }
+            ]
+          },
+          "selected": {
+            "description": "Whether the global assignment picked this candidate for an offer.",
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

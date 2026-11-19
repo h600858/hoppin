@@ -1,0 +1,25 @@
+[
+  {
+    "id": "bjorkelia",
+    "data": {
+      "tenantId": "fjellvik",
+      "name": "Bjørkelia skole",
+      "timeZone": "Europe/Oslo",
+      "grades": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "escalationStaffIds": [
+        "staff-rektor",
+        "staff-inspektor"
+      ],
+      "sharesSubstitutePool": false,
+      "active": true
+    }
+  }
+]

@@ -1,0 +1,179 @@
+{
+  "ClaimShiftRequest": {
+    "valid": [
+      {
+        "offerId": "offer-001",
+        "idempotencyKey": "K7m2pQx4-1"
+      }
+    ],
+    "invalid": [
+      {
+        "why": "idempotency key is required",
+        "doc": {
+          "offerId": "offer-001"
+        }
+      },
+      {
+        "why": "idempotency key is too short",
+        "doc": {
+          "offerId": "offer-001",
+          "idempotencyKey": "abc"
+        }
+      },
+      {
+        "why": "unknown field",
+        "doc": {
+          "offerId": "offer-001",
+          "idempotencyKey": "K7m2pQx4-1",
+          "substituteId": "sub-kari"
+        }
+      }
+    ]
+  },
+  "ClaimShiftResponse": {
+    "valid": [
+      {
+        "ok": true,
+        "undoUntil": "2026-11-19T05:32:10.000Z"
+      },
+      {
+        "ok": false,
+        "reason": "allerede_tatt"
+      },
+      {
+        "ok": false,
+        "reason": "utloept"
+      },
+      {
+        "ok": false,
+        "reason": "ikke_din"
+      }
+    ],
+    "invalid": [
+      {
+        "why": "success needs undoUntil",
+        "doc": {
+          "ok": true
+        }
+      },
+      {
+        "why": "failure needs a known reason",
+        "doc": {
+          "ok": false,
+          "reason": "for_sent"
+        }
+      },
+      {
+        "why": "success and reason cannot be combined",
+        "doc": {
+          "ok": true,
+          "undoUntil": "2026-11-19T05:32:10.000Z",
+          "reason": "utloept"
+        }
+      }
+    ]
+  },
+  "UndoClaimRequest": {
+    "valid": [
+      {
+        "offerId": "offer-001"
+      }
+    ],
+    "invalid": [
+      {
+        "why": "offerId is required",
+        "doc": {}
+      }
+    ]
+  },
+  "UndoClaimResponse": {
+    "valid": [
+      {
+        "ok": true
+      },
+      {
+        "ok": false
+      }
+    ],
+    "invalid": [
+      {
+        "why": "ok must be a boolean",
+        "doc": {
+          "ok": "ja"
+        }
+      }
+    ]
+  },
+  "DeclineOfferRequest": {
+    "valid": [
+      {
+        "offerId": "offer-001",
+        "reason": "kan_ikke"
+      },
+      {
+        "offerId": "offer-001",
+        "reason": "utilgjengelig_hele_dagen"
+      }
+    ],
+    "invalid": [
+      {
+        "why": "unknown reason",
+        "doc": {
+          "offerId": "offer-001",
+          "reason": "syk"
+        }
+      },
+      {
+        "why": "reason is required",
+        "doc": {
+          "offerId": "offer-001"
+        }
+      }
+    ]
+  },
+  "DeclineOfferResponse": {
+    "valid": [
+      {
+        "ok": true
+      }
+    ],
+    "invalid": [
+      {
+        "why": "decline always succeeds",
+        "doc": {
+          "ok": false
+        }
+      }
+    ]
+  },
+  "WithdrawAbsenceRequest": {
+    "valid": [
+      {
+        "absenceId": "abs-001"
+      }
+    ],
+    "invalid": [
+      {
+        "why": "absenceId cannot be empty",
+        "doc": {
+          "absenceId": ""
+        }
+      }
+    ]
+  },
+  "WithdrawAbsenceResponse": {
+    "valid": [
+      {
+        "ok": true
+      }
+    ],
+    "invalid": [
+      {
+        "why": "withdraw always succeeds",
+        "doc": {
+          "ok": false
+        }
+      }
+    ]
+  }
+}

@@ -82,6 +82,342 @@ export const schemas = [
   },
   {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/assignment.schema.json",
+    "title": "Assignment",
+    "description": "A confirmed shift for one substitute. Collection: assignments. startsAt and endsAt are copied from the shift so a substitute's own assignments and time collisions can be queried directly.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "shiftId",
+      "substituteId",
+      "offerId",
+      "source",
+      "startsAt",
+      "endsAt",
+      "confirmedAt",
+      "cancelledAt",
+      "attended",
+      "feedback"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "shiftId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "substituteId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "offerId": {
+        "description": "Null when an admin assigned the shift manually.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "source": {
+        "type": "string",
+        "enum": [
+          "offer",
+          "manual"
+        ]
+      },
+      "startsAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "endsAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "confirmedAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "cancelledAt": {
+        "description": "Set when the substitute withdraws.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/Instant"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "attended": {
+        "description": "Null until the school has registered attendance.",
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "feedback": {
+        "description": "The school's feedback. Personal data about the substitute, visible on access request (plan 6.2).",
+        "anyOf": [
+          {
+            "title": "AssignmentFeedback",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "rating",
+              "comment",
+              "givenBy",
+              "givenAt"
+            ],
+            "properties": {
+              "rating": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "comment": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "givenBy": {
+                "$ref": "common.schema.json#/$defs/DocumentId"
+              },
+              "givenAt": {
+                "$ref": "common.schema.json#/$defs/Instant"
+              }
+            }
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/availability.schema.json",
+    "title": "Availability",
+    "description": "A period the substitute has marked. Collection: availability. Busy time from assignments is derived, not stored here. No reason is stored.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "substituteId",
+      "kind",
+      "startsAt",
+      "endsAt",
+      "source",
+      "createdAt"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "substituteId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "unavailable",
+          "available"
+        ]
+      },
+      "startsAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "endsAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "source": {
+        "description": "substitute: set in the app or via the SMS answer page. admin: set in the admin web app.",
+        "type": "string",
+        "enum": [
+          "substitute",
+          "admin"
+        ]
+      },
+      "createdAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/callables.json",
+    "title": "Callables",
+    "description": "Contract for the callable functions. Each callable has a <Name>Request and a <Name>Response definition. Callables validate their input against the request definition (step 4).",
+    "$defs": {
+      "ClaimShiftRequest": {
+        "title": "ClaimShiftRequest",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "offerId",
+          "idempotencyKey"
+        ],
+        "properties": {
+          "offerId": {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          "idempotencyKey": {
+            "description": "Unique per answer. Repeated calls with the same key give the same result.",
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 128
+          }
+        }
+      },
+      "ClaimShiftResponse": {
+        "title": "ClaimShiftResponse",
+        "oneOf": [
+          {
+            "title": "ClaimShiftAccepted",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ok",
+              "undoUntil"
+            ],
+            "properties": {
+              "ok": {
+                "const": true
+              },
+              "undoUntil": {
+                "$ref": "common.schema.json#/$defs/Instant"
+              }
+            }
+          },
+          {
+            "title": "ClaimShiftRejected",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ok",
+              "reason"
+            ],
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "allerede_tatt",
+                  "utloept",
+                  "ikke_din"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "UndoClaimRequest": {
+        "title": "UndoClaimRequest",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "offerId"
+        ],
+        "properties": {
+          "offerId": {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          }
+        }
+      },
+      "UndoClaimResponse": {
+        "title": "UndoClaimResponse",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DeclineOfferRequest": {
+        "title": "DeclineOfferRequest",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "offerId",
+          "reason"
+        ],
+        "properties": {
+          "offerId": {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "kan_ikke",
+              "utilgjengelig_hele_dagen"
+            ]
+          }
+        }
+      },
+      "DeclineOfferResponse": {
+        "title": "DeclineOfferResponse",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok"
+        ],
+        "properties": {
+          "ok": {
+            "const": true
+          }
+        }
+      },
+      "WithdrawAbsenceRequest": {
+        "title": "WithdrawAbsenceRequest",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "absenceId"
+        ],
+        "properties": {
+          "absenceId": {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          }
+        }
+      },
+      "WithdrawAbsenceResponse": {
+        "title": "WithdrawAbsenceResponse",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok"
+        ],
+        "properties": {
+          "ok": {
+            "const": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://schema.innhopp.no/common.schema.json",
     "title": "CommonDefinitions",
     "description": "Shared building blocks. Not a collection.",
@@ -211,6 +547,300 @@ export const schemas = [
         "enum": [
           "push",
           "sms"
+        ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/decision.schema.json",
+    "title": "Decision",
+    "description": "Audit log of one matching run for one shift (rule 8). Collection: decisions. All shifts in the same run share runId and inputHash.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "shiftId",
+      "runId",
+      "wave",
+      "inputHash",
+      "algorithmVersion",
+      "configVersion",
+      "createdAt",
+      "candidates"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "shiftId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "runId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "wave": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "inputHash": {
+        "description": "SHA-256 of the full input to the run, hex.",
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "algorithmVersion": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 40
+      },
+      "configVersion": {
+        "description": "Version of schoolConfigs/{schoolId} that was used.",
+        "type": "integer",
+        "minimum": 1
+      },
+      "createdAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "candidates": {
+        "description": "Every candidate considered, also those excluded by a hard filter.",
+        "type": "array",
+        "items": {
+          "title": "DecisionCandidate",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "substituteId",
+            "excludedBy",
+            "score",
+            "components",
+            "selected"
+          ],
+          "properties": {
+            "substituteId": {
+              "$ref": "common.schema.json#/$defs/DocumentId"
+            },
+            "excludedBy": {
+              "description": "The first hard filter that excluded the candidate, or null.",
+              "anyOf": [
+                {
+                  "title": "HardFilterName",
+                  "type": "string",
+                  "enum": [
+                    "police_certificate",
+                    "inactive",
+                    "role",
+                    "time_collision",
+                    "class_block",
+                    "working_time_limit",
+                    "formal_competence",
+                    "already_asked"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "score": {
+              "description": "Total score 0 to 100. Null when excluded.",
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "components": {
+              "description": "Sub-score per component, each 0 to 1. Null when excluded.",
+              "anyOf": [
+                {
+                  "title": "ScoreComponents",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "subjectMatch",
+                    "classFamiliarity",
+                    "acceptLikelihood",
+                    "reliability",
+                    "fairness",
+                    "preferenceMatch",
+                    "proximity"
+                  ],
+                  "properties": {
+                    "subjectMatch": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "classFamiliarity": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "acceptLikelihood": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "reliability": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "fairness": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "preferenceMatch": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "proximity": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "selected": {
+              "description": "Whether the global assignment picked this candidate for an offer.",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/escalation.schema.json",
+    "title": "Escalation",
+    "description": "A shift handed to a person after the deadline (plan 7.7). Collection: escalations.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "shiftId",
+      "decisionId",
+      "notifiedStaffIds",
+      "suggestions",
+      "createdAt",
+      "resolvedAt",
+      "resolvedBy",
+      "resolution"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "shiftId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "decisionId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "notifiedStaffIds": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/DocumentId"
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "suggestions": {
+        "description": "The best remaining candidates, ranked, with a short reason each.",
+        "type": "array",
+        "maxItems": 5,
+        "items": {
+          "title": "EscalationSuggestion",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "substituteId",
+            "rank",
+            "score",
+            "reason"
+          ],
+          "properties": {
+            "substituteId": {
+              "$ref": "common.schema.json#/$defs/DocumentId"
+            },
+            "rank": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        }
+      },
+      "createdAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "resolvedAt": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/Instant"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "resolvedBy": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "resolution": {
+        "description": "How it was solved, counted in the statistics. Null while open.",
+        "anyOf": [
+          {
+            "title": "EscalationResolution",
+            "type": "string",
+            "enum": [
+              "manual_assignment",
+              "internal_staff",
+              "merged_groups",
+              "other_internal",
+              "withdrawn"
+            ]
+          },
+          {
+            "type": "null"
+          }
         ]
       }
     }
@@ -731,6 +1361,89 @@ export const schemas = [
   },
   {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/shiftEvent.schema.json",
+    "title": "ShiftEvent",
+    "description": "One status change of a shift, written by transitionShift (rule 4). Collection: shifts/{shiftId}/events.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "shiftId",
+      "from",
+      "to",
+      "at",
+      "actor",
+      "actorId",
+      "offerId",
+      "cause"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "shiftId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "from": {
+        "description": "Null for the event that created the shift.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/ShiftStatus"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "to": {
+        "$ref": "common.schema.json#/$defs/ShiftStatus"
+      },
+      "at": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "actor": {
+        "type": "string",
+        "enum": [
+          "system",
+          "substitute",
+          "staff",
+          "admin"
+        ]
+      },
+      "actorId": {
+        "description": "Who did it. Null when the system did it.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "offerId": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "cause": {
+        "description": "Short machine readable cause, for example claim, undo, deadline.",
+        "type": "string",
+        "pattern": "^[a-z_]{1,40}$"
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://schema.innhopp.no/staff.schema.json",
     "title": "Staff",
     "description": "A permanent employee who can report absence. Collection: staff.",
@@ -1035,6 +1748,76 @@ export const schemas = [
             }
           }
         }
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/tenant.schema.json",
+    "title": "Tenant",
+    "description": "A municipality or private school owner (plan 10.1: the data controller). Collection: tenants. No real personal data may be stored before dataProcessingAgreementSignedOn is set.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "name",
+      "orgNumber",
+      "contactName",
+      "contactEmail",
+      "agreementStatus",
+      "dataProcessingAgreementSignedOn"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "orgNumber": {
+        "description": "Norwegian organisation number, nine digits.",
+        "type": "string",
+        "pattern": "^[0-9]{9}$"
+      },
+      "contactName": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "contactEmail": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "email"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "agreementStatus": {
+        "type": "string",
+        "enum": [
+          "pilot",
+          "active",
+          "ended"
+        ]
+      },
+      "dataProcessingAgreementSignedOn": {
+        "description": "Date the data processing agreement (GDPR art. 28) was signed.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/LocalDate"
+          },
+          {
+            "type": "null"
+          }
+        ]
       }
     }
   },

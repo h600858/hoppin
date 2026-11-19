@@ -3,14 +3,21 @@ import { OFFER_STATUSES } from "../domain/offer_status";
 import { SHIFT_STATUSES } from "../domain/shift_status";
 import { schemas } from "../generated/schemas";
 import { readFixture } from "../testing/fixtures";
-import { type SchemaName, validate } from "./validate";
+import {
+  type CallableDefinition,
+  type SchemaName,
+  type ValidationResult,
+  validate,
+  validateCallable,
+} from "./validate";
 
-interface ModelFixture {
+interface ExampleSet {
   valid: unknown[];
   invalid: { why: string; doc: unknown }[];
 }
 
 const models: SchemaName[] = [
+  "tenant",
   "school",
   "schoolConfig",
   "staff",
@@ -18,19 +25,48 @@ const models: SchemaName[] = [
   "timetableEntry",
   "absence",
   "shift",
+  "shiftEvent",
   "offer",
+  "assignment",
+  "availability",
+  "decision",
+  "escalation",
 ];
 
+function errorsOf(result: ValidationResult<unknown>): string[] {
+  return result.ok ? [] : result.errors;
+}
+
 describe.each(models)("%s schema", (name) => {
-  const fixture = readFixture(`models/${name}.json`) as ModelFixture;
+  const fixture = readFixture(`models/${name}.json`) as ExampleSet;
 
   it.each(fixture.valid.map((doc, i) => [i, doc] as const))("accepts valid example %i", (_, doc) => {
-    const result = validate(name, doc);
-    expect(result.ok ? [] : result.errors).toEqual([]);
+    expect(errorsOf(validate(name, doc))).toEqual([]);
   });
 
   it.each(fixture.invalid.map(({ why, doc }) => [why, doc] as const))("rejects: %s", (_, doc) => {
     expect(validate(name, doc).ok).toBe(false);
+  });
+});
+
+describe("callables contract", () => {
+  const fixture = readFixture("callables/callables.json") as Record<CallableDefinition, ExampleSet>;
+
+  describe.each(Object.keys(fixture) as CallableDefinition[])("%s", (name) => {
+    const { valid, invalid } = fixture[name];
+
+    it.each(valid.map((doc, i) => [i, doc] as const))("accepts valid example %i", (_, doc) => {
+      expect(errorsOf(validateCallable(name, doc))).toEqual([]);
+    });
+
+    it.each(invalid.map(({ why, doc }) => [why, doc] as const))("rejects: %s", (_, doc) => {
+      expect(validateCallable(name, doc).ok).toBe(false);
+    });
+  });
+
+  it("has examples for every definition in callables.json", () => {
+    const callables = schemas.find((s) => s.title === "Callables")!;
+    expect(Object.keys(fixture).sort()).toEqual(Object.keys(callables.$defs).sort());
   });
 });
 

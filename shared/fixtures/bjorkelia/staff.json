@@ -1,0 +1,312 @@
+[
+  {
+    "id": "staff-rektor",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Rita Rektorsen",
+      "role": "laerer",
+      "phone": "+4700000001",
+      "authUid": null,
+      "classNames": [],
+      "subjects": [],
+      "isSchoolAdmin": true,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-inspektor",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Ivar Inspektørsen",
+      "role": "laerer",
+      "phone": "+4700000002",
+      "authUid": null,
+      "classNames": [],
+      "subjects": [
+        "matematikk"
+      ],
+      "isSchoolAdmin": true,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-1a",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Astrid Aanes",
+      "role": "laerer",
+      "phone": "+4700000003",
+      "authUid": null,
+      "classNames": [
+        "1A"
+      ],
+      "subjects": [
+        "norsk",
+        "matematikk",
+        "naturfag",
+        "samfunnsfag",
+        "krle"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-2a",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Bjørn Berge",
+      "role": "laerer",
+      "phone": "+4700000004",
+      "authUid": null,
+      "classNames": [
+        "2A"
+      ],
+      "subjects": [
+        "norsk",
+        "matematikk",
+        "naturfag",
+        "samfunnsfag",
+        "krle"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-3a",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Cecilie Dahl",
+      "role": "laerer",
+      "phone": "+4700000005",
+      "authUid": null,
+      "classNames": [
+        "3A"
+      ],
+      "subjects": [
+        "norsk",
+        "matematikk",
+        "naturfag",
+        "samfunnsfag",
+        "krle"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-4a",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "David Eide",
+      "role": "laerer",
+      "phone": "+4700000006",
+      "authUid": null,
+      "classNames": [
+        "4A"
+      ],
+      "subjects": [
+        "norsk",
+        "matematikk",
+        "naturfag",
+        "samfunnsfag",
+        "krle"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-5a",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Eva Fjeld",
+      "role": "laerer",
+      "phone": "+4700000007",
+      "authUid": null,
+      "classNames": [
+        "5A"
+      ],
+      "subjects": [
+        "norsk",
+        "matematikk",
+        "naturfag",
+        "samfunnsfag",
+        "krle"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-6a",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Frode Gran",
+      "role": "laerer",
+      "phone": "+4700000008",
+      "authUid": null,
+      "classNames": [
+        "6A"
+      ],
+      "subjects": [
+        "norsk",
+        "matematikk",
+        "naturfag",
+        "samfunnsfag",
+        "krle"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-7a",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Guro Haugen",
+      "role": "laerer",
+      "phone": "+4700000009",
+      "authUid": null,
+      "classNames": [
+        "7A"
+      ],
+      "subjects": [
+        "norsk",
+        "matematikk",
+        "naturfag",
+        "samfunnsfag",
+        "krle"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-musikk",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Hanne Isaksen",
+      "role": "laerer",
+      "phone": "+4700000010",
+      "authUid": null,
+      "classNames": [],
+      "subjects": [
+        "musikk",
+        "kunst_og_handverk"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-gym",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Jonas Kvam",
+      "role": "laerer",
+      "phone": "+4700000011",
+      "authUid": null,
+      "classNames": [],
+      "subjects": [
+        "kroppsoving",
+        "engelsk"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-ass-1",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Liv Lunde",
+      "role": "assistent",
+      "phone": "+4700000012",
+      "authUid": null,
+      "classNames": [
+        "1A"
+      ],
+      "subjects": [],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-ass-2",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Magnus Moe",
+      "role": "assistent",
+      "phone": "+4700000013",
+      "authUid": null,
+      "classNames": [
+        "2A"
+      ],
+      "subjects": [],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-ass-3",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Nora Næss",
+      "role": "assistent",
+      "phone": "+4700000014",
+      "authUid": null,
+      "classNames": [
+        "3A"
+      ],
+      "subjects": [],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-sfo-1",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Ole Opsahl",
+      "role": "sfo",
+      "phone": "+4700000015",
+      "authUid": null,
+      "classNames": [],
+      "subjects": [],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  },
+  {
+    "id": "staff-sfo-2",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "name": "Pia Ruud",
+      "role": "sfo",
+      "phone": "+4700000016",
+      "authUid": null,
+      "classNames": [],
+      "subjects": [],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  }
+]

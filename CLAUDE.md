@@ -99,7 +99,7 @@ Standardvekter (sum 1): fagkompetanse 0.25, klassekjennskap 0.20, sannsynlighet 
 0.15, pålitelighet 0.15, rettferdig fordeling 0.15, preferansetreff 0.07, nærhet 0.03.
 Detaljer i plan 7.3 og vedlegg B.
 
-Callables (sannhetskilde: `shared/schema/callables.json`, kommer i steg 2):
+Callables (sannhetskilde: `shared/schema/callables.json`):
 ```
 claimShift({offerId, idempotencyKey})
   -> {ok: true, undoUntil} | {ok: false, reason: "allerede_tatt" | "utloept" | "ikke_din"}
@@ -160,6 +160,7 @@ npm test                        # enhetstester, uten emulator
 npm run test:emulator           # regeltester mot kjørende emulator (demo-innhopp-test)
 npm run typecheck; npm run lint
 npm run gen:types               # etter endring i shared/schema, commit src/generated
+npm run seed                    # Bjørkelia skole til emulatoren (-- --reset tømmer først)
 ```
 
 Emulator UI: http://127.0.0.1:4000. CI: `.github/workflows/ci.yml` (Flutter 3.29.3,

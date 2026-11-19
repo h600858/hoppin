@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/availability.schema.json",
+  "title": "Availability",
+  "description": "A period the substitute has marked. Collection: availability. Busy time from assignments is derived, not stored here. No reason is stored.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tenantId", "substituteId", "kind", "startsAt", "endsAt", "source", "createdAt"],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "substituteId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "kind": { "type": "string", "enum": ["unavailable", "available"] },
+    "startsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "endsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "source": {
+      "description": "substitute: set in the app or via the SMS answer page. admin: set in the admin web app.",
+      "type": "string",
+      "enum": ["substitute", "admin"]
+    },
+    "createdAt": { "$ref": "common.schema.json#/$defs/Instant" }
+  }
+}

@@ -1,0 +1,1460 @@
+[
+  {
+    "id": "sub-kari",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Kari Nes",
+      "phone": "+4700000101",
+      "email": "kari@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer",
+        "sfo"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "matematikk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "norsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-06-14",
+          "expiresOn": "2029-06-14"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          4
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:30",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-per",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Per Hansen",
+      "phone": "+4700000102",
+      "email": null,
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [
+          "barne_og_ungdomsarbeider"
+        ],
+        "teachingSubjects": [],
+        "policeCertificate": {
+          "issuedOn": "2023-03-01",
+          "expiresOn": "2028-03-01"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "16:30",
+        "maxDaysPerWeek": 5,
+        "preferredGrades": [
+          1,
+          2,
+          3
+        ],
+        "notificationChannel": "sms"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-lise",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Lise Kvalheim",
+      "phone": "+4700000103",
+      "email": "lise@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "engelsk",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "norsk",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2025-01-20",
+          "expiresOn": "2030-01-20"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          2,
+          3
+        ],
+        "earliestStart": "08:30",
+        "latestEnd": "14:00",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [
+          5,
+          6,
+          7
+        ],
+        "notificationChannel": "both"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-ola",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Ola Sæther",
+      "phone": "+4700000104",
+      "email": "ola@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer",
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "kroppsoving",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2020-10-01",
+          "expiresOn": "2025-10-01"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 4,
+        "preferredGrades": [],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-ingrid",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Ingrid Vik",
+      "phone": "+4700000105",
+      "email": "ingrid@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "naturfag",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "matematikk",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-11-30",
+          "expiresOn": "2029-11-30"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          3,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [
+          5,
+          6,
+          7
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-tor",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Tor Brekke",
+      "phone": "+4700000106",
+      "email": "tor@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "musikk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "kunst_og_handverk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2023-09-15",
+          "expiresOn": "2028-09-15"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          4,
+          5
+        ],
+        "earliestStart": "08:30",
+        "latestEnd": "14:00",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-sigrid",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Sigrid Holm",
+      "phone": "+4700000107",
+      "email": "sigrid@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "assistent",
+        "sfo"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [
+          "barne_og_ungdomsarbeider"
+        ],
+        "teachingSubjects": [],
+        "policeCertificate": {
+          "issuedOn": "2024-02-28",
+          "expiresOn": "2029-02-28"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "07:30",
+        "latestEnd": "16:30",
+        "maxDaysPerWeek": 5,
+        "preferredGrades": [
+          1,
+          2
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-erik",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Erik Lien",
+      "phone": "+4700000108",
+      "email": null,
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "matematikk",
+            "grades": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "level": 1
+          },
+          {
+            "subject": "norsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "level": 1
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2023-12-01",
+          "expiresOn": "2028-12-01"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:30",
+        "maxDaysPerWeek": 5,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "sms"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-marte",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Marte Solberg",
+      "phone": "+4700000109",
+      "email": "marte@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "norsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "samfunnsfag",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          },
+          {
+            "subject": "krle",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2025-05-05",
+          "expiresOn": "2030-05-05"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "13:30",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [
+          1,
+          2,
+          3
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-anders",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Anders Strand",
+      "phone": "+4700000110",
+      "email": "anders@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer",
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "engelsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-08-08",
+          "expiresOn": "2029-08-08"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          2,
+          4
+        ],
+        "earliestStart": "08:30",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-hilde",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Hilde Bakken",
+      "phone": "+4700000111",
+      "email": "hilde@example.com",
+      "authUid": null,
+      "status": "paused",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "matematikk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-04-04",
+          "expiresOn": "2029-04-04"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-knut",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Knut Aasen",
+      "phone": "+4700000112",
+      "email": null,
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "samfunnsfag",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "krle",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2023-06-30",
+          "expiresOn": "2028-06-30"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:30",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [
+          6,
+          7
+        ],
+        "notificationChannel": "sms"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-nina",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Nina Dale",
+      "phone": "+4700000113",
+      "email": "nina@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "sfo"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [],
+        "teachingSubjects": [],
+        "policeCertificate": {
+          "issuedOn": "2024-09-09",
+          "expiresOn": "2029-09-09"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "12:00",
+        "latestEnd": "16:30",
+        "maxDaysPerWeek": 5,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-pal",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Pål Myhre",
+      "phone": "+4700000114",
+      "email": "pal@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "kroppsoving",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "naturfag",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-07-07",
+          "expiresOn": "2029-07-07"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-randi",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Randi Furu",
+      "phone": "+4700000115",
+      "email": null,
+      "authUid": null,
+      "status": "left",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "norsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2022-01-15",
+          "expiresOn": "2027-01-15"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [],
+        "notificationChannel": "sms"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-stian",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Stian Vold",
+      "phone": "+4700000116",
+      "email": "stian@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [],
+        "teachingSubjects": [],
+        "policeCertificate": null
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "16:00",
+        "maxDaysPerWeek": 5,
+        "preferredGrades": [],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-trine",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Trine Aune",
+      "phone": "+4700000117",
+      "email": "trine@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "matematikk",
+            "grades": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "level": 3
+          },
+          {
+            "subject": "naturfag",
+            "grades": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2025-02-02",
+          "expiresOn": "2030-02-02"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          2,
+          3,
+          4
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "14:30",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "both"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-geir",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Geir Lund",
+      "phone": "+4700000118",
+      "email": "geir@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "norsk",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 1
+          },
+          {
+            "subject": "engelsk",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 1
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2023-10-10",
+          "expiresOn": "2028-10-10"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "08:30",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 4,
+        "preferredGrades": [
+          5,
+          6,
+          7
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": [
+        {
+          "schoolId": "bjorkelia",
+          "className": "6A",
+          "reason": "Avtalt med foresatte",
+          "since": "2026-09-01"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sub-elin",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Elin Tangen",
+      "phone": "+4700000119",
+      "email": "elin@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer",
+        "sfo"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "kunst_og_handverk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "mat_og_helse",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-03-03",
+          "expiresOn": "2029-03-03"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          4
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "16:30",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-bjarne",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Bjarne Rønning",
+      "phone": "+4700000120",
+      "email": null,
+      "authUid": null,
+      "status": "paused",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "samfunnsfag",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2023-05-05",
+          "expiresOn": "2028-05-05"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          2,
+          3
+        ],
+        "earliestStart": "08:30",
+        "latestEnd": "14:00",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [],
+        "notificationChannel": "sms"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-vigdis",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Vigdis Hope",
+      "phone": "+4700000121",
+      "email": "vigdis@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [
+          "barne_og_ungdomsarbeider"
+        ],
+        "teachingSubjects": [],
+        "policeCertificate": {
+          "issuedOn": "2024-12-12",
+          "expiresOn": "2029-12-12"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "14:00",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [
+          1,
+          2,
+          3
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-arne",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Arne Fosse",
+      "phone": "+4700000122",
+      "email": "arne@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "matematikk",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          },
+          {
+            "subject": "naturfag",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2025-04-01",
+          "expiresOn": "2030-04-01"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          4,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:30",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [
+          5,
+          6,
+          7
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-silje",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Silje Berg",
+      "phone": "+4700000123",
+      "email": "silje@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "norsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "level": 3
+          },
+          {
+            "subject": "engelsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-10-01",
+          "expiresOn": "2029-10-01"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 5,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-henrik",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Henrik Lie",
+      "phone": "+4700000124",
+      "email": null,
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "laerer",
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "kroppsoving",
+            "grades": [
+              5,
+              6,
+              7
+            ],
+            "level": 1
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2023-11-11",
+          "expiresOn": "2028-11-11"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          3,
+          5
+        ],
+        "earliestStart": "09:00",
+        "latestEnd": "15:00",
+        "maxDaysPerWeek": 2,
+        "preferredGrades": [
+          5,
+          6,
+          7
+        ],
+        "notificationChannel": "sms"
+      },
+      "classBlocks": []
+    }
+  },
+  {
+    "id": "sub-mona",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Mona Sand",
+      "phone": "+4700000125",
+      "email": "mona@example.com",
+      "authUid": null,
+      "status": "active",
+      "roles": [
+        "sfo",
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [
+          "barne_og_ungdomsarbeider"
+        ],
+        "teachingSubjects": [],
+        "policeCertificate": {
+          "issuedOn": "2024-06-06",
+          "expiresOn": "2029-06-06"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "earliestStart": "11:00",
+        "latestEnd": "16:30",
+        "maxDaysPerWeek": 4,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    }
+  }
+]

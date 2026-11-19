@@ -1,0 +1,63 @@
+[
+  {
+    "id": "bjorkelia",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "version": 1,
+      "updatedAt": "2026-08-10T08:00:00.000Z",
+      "updatedBy": "staff-rektor",
+      "dispatchEnabled": true,
+      "weights": {
+        "subjectMatch": 0.25,
+        "classFamiliarity": 0.2,
+        "acceptLikelihood": 0.15,
+        "reliability": 0.15,
+        "fairness": 0.15,
+        "preferenceMatch": 0.07,
+        "proximity": 0.03
+      },
+      "filters": {
+        "roleMatch": true,
+        "timeCollision": true,
+        "classBlocks": true,
+        "workingTimeLimits": true,
+        "alreadyAsked": true,
+        "formalCompetenceSubjects": []
+      },
+      "waves": {
+        "calm": {
+          "minMinutesBeforeStart": 960,
+          "waveSize": 3,
+          "intervalMinutes": 20,
+          "deadlineMinutes": 60
+        },
+        "normal": {
+          "minMinutesBeforeStart": 120,
+          "waveSize": 3,
+          "intervalMinutes": 10,
+          "deadlineMinutes": 30
+        },
+        "urgent": {
+          "minMinutesBeforeStart": 45,
+          "waveSize": 6,
+          "intervalMinutes": 5,
+          "deadlineMinutes": 15
+        },
+        "critical": {
+          "minMinutesBeforeStart": 0,
+          "waveSize": null,
+          "intervalMinutes": null,
+          "deadlineMinutes": 10
+        }
+      },
+      "quietHours": {
+        "start": "21:00",
+        "end": "06:30"
+      },
+      "undoWindowSeconds": 60,
+      "smsFallbackDelaySeconds": 120,
+      "maxSmsPerDay": 200
+    }
+  }
+]

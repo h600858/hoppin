@@ -1,0 +1,13 @@
+[
+  {
+    "id": "fjellvik",
+    "data": {
+      "name": "Fjellvik kommune",
+      "orgNumber": "999000111",
+      "contactName": "Fiktiv Kontaktperson",
+      "contactEmail": "skole@example.com",
+      "agreementStatus": "pilot",
+      "dataProcessingAgreementSignedOn": null
+    }
+  }
+]

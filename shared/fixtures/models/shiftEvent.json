@@ -1,0 +1,75 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "from": "offering",
+      "to": "claimed",
+      "at": "2026-11-19T05:31:10.000Z",
+      "actor": "substitute",
+      "actorId": "sub-kari",
+      "offerId": "offer-001",
+      "cause": "claim"
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "from": null,
+      "to": "pending",
+      "at": "2026-11-19T05:31:10.000Z",
+      "actor": "system",
+      "actorId": null,
+      "offerId": null,
+      "cause": "created"
+    }
+  ],
+  "invalid": [
+    {
+      "why": "to is not a shift status",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "from": "offering",
+        "to": "accepted",
+        "at": "2026-11-19T05:31:10.000Z",
+        "actor": "substitute",
+        "actorId": "sub-kari",
+        "offerId": "offer-001",
+        "cause": "claim"
+      }
+    },
+    {
+      "why": "cause is a short code",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "from": "offering",
+        "to": "claimed",
+        "at": "2026-11-19T05:31:10.000Z",
+        "actor": "substitute",
+        "actorId": "sub-kari",
+        "offerId": "offer-001",
+        "cause": "Vikaren takket ja"
+      }
+    },
+    {
+      "why": "unknown actor",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "from": "offering",
+        "to": "claimed",
+        "at": "2026-11-19T05:31:10.000Z",
+        "actor": "rektor",
+        "actorId": "sub-kari",
+        "offerId": "offer-001",
+        "cause": "claim"
+      }
+    }
+  ]
+}

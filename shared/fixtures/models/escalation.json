@@ -1,0 +1,172 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "decisionId": "dec-003",
+      "notifiedStaffIds": [
+        "staff-rektor"
+      ],
+      "suggestions": [
+        {
+          "substituteId": "sub-per",
+          "rank": 1,
+          "score": 61,
+          "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+        },
+        {
+          "substituteId": "sub-lise",
+          "rank": 2,
+          "score": 55,
+          "reason": "Kjenner trinnet, ledig hele dagen"
+        }
+      ],
+      "createdAt": "2026-11-19T06:45:00.000Z",
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolution": null
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "decisionId": "dec-003",
+      "notifiedStaffIds": [
+        "staff-rektor"
+      ],
+      "suggestions": [
+        {
+          "substituteId": "sub-per",
+          "rank": 1,
+          "score": 61,
+          "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+        },
+        {
+          "substituteId": "sub-lise",
+          "rank": 2,
+          "score": 55,
+          "reason": "Kjenner trinnet, ledig hele dagen"
+        }
+      ],
+      "createdAt": "2026-11-19T06:45:00.000Z",
+      "resolvedAt": "2026-11-19T06:52:00.000Z",
+      "resolvedBy": "staff-rektor",
+      "resolution": "internal_staff"
+    }
+  ],
+  "invalid": [
+    {
+      "why": "someone must be notified",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "decisionId": "dec-003",
+        "notifiedStaffIds": [],
+        "suggestions": [
+          {
+            "substituteId": "sub-per",
+            "rank": 1,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          },
+          {
+            "substituteId": "sub-lise",
+            "rank": 2,
+            "score": 55,
+            "reason": "Kjenner trinnet, ledig hele dagen"
+          }
+        ],
+        "createdAt": "2026-11-19T06:45:00.000Z",
+        "resolvedAt": null,
+        "resolvedBy": null,
+        "resolution": null
+      }
+    },
+    {
+      "why": "at most five suggestions",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "decisionId": "dec-003",
+        "notifiedStaffIds": [
+          "staff-rektor"
+        ],
+        "suggestions": [
+          {
+            "substituteId": "sub-per",
+            "rank": 1,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          },
+          {
+            "substituteId": "sub-per",
+            "rank": 2,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          },
+          {
+            "substituteId": "sub-per",
+            "rank": 3,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          },
+          {
+            "substituteId": "sub-per",
+            "rank": 4,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          },
+          {
+            "substituteId": "sub-per",
+            "rank": 5,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          },
+          {
+            "substituteId": "sub-per",
+            "rank": 6,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          }
+        ],
+        "createdAt": "2026-11-19T06:45:00.000Z",
+        "resolvedAt": null,
+        "resolvedBy": null,
+        "resolution": null
+      }
+    },
+    {
+      "why": "unknown resolution",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "decisionId": "dec-003",
+        "notifiedStaffIds": [
+          "staff-rektor"
+        ],
+        "suggestions": [
+          {
+            "substituteId": "sub-per",
+            "rank": 1,
+            "score": 61,
+            "reason": "Har hatt 7B ni ganger i vår, men svarer sjelden før 08"
+          },
+          {
+            "substituteId": "sub-lise",
+            "rank": 2,
+            "score": 55,
+            "reason": "Kjenner trinnet, ledig hele dagen"
+          }
+        ],
+        "createdAt": "2026-11-19T06:45:00.000Z",
+        "resolvedAt": null,
+        "resolvedBy": null,
+        "resolution": "fikset"
+      }
+    }
+  ]
+}

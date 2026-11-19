@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/assignment.schema.json",
+  "title": "Assignment",
+  "description": "A confirmed shift for one substitute. Collection: assignments. startsAt and endsAt are copied from the shift so a substitute's own assignments and time collisions can be queried directly.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "shiftId", "substituteId", "offerId", "source",
+    "startsAt", "endsAt", "confirmedAt", "cancelledAt", "attended", "feedback"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "shiftId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "substituteId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "offerId": {
+      "description": "Null when an admin assigned the shift manually.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "source": { "type": "string", "enum": ["offer", "manual"] },
+    "startsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "endsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "confirmedAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "cancelledAt": {
+      "description": "Set when the substitute withdraws.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Instant" }, { "type": "null" }]
+    },
+    "attended": {
+      "description": "Null until the school has registered attendance.",
+      "anyOf": [{ "type": "boolean" }, { "type": "null" }]
+    },
+    "feedback": {
+      "description": "The school's feedback. Personal data about the substitute, visible on access request (plan 6.2).",
+      "anyOf": [
+        {
+          "title": "AssignmentFeedback",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rating", "comment", "givenBy", "givenAt"],
+          "properties": {
+            "rating": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "comment": {
+              "anyOf": [{ "type": "string", "minLength": 1, "maxLength": 500 }, { "type": "null" }]
+            },
+            "givenBy": { "$ref": "common.schema.json#/$defs/DocumentId" },
+            "givenAt": { "$ref": "common.schema.json#/$defs/Instant" }
+          }
+        },
+        { "type": "null" }
+      ]
+    }
+  }
+}

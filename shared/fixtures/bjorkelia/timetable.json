@@ -1,0 +1,3872 @@
+[
+  {
+    "id": "tt-001",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "norsk",
+      "grade": 1,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-002",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "matematikk",
+      "grade": 1,
+      "weekday": 1,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-003",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "naturfag",
+      "grade": 1,
+      "weekday": 1,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-004",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "samfunnsfag",
+      "grade": 1,
+      "weekday": 1,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-005",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "krle",
+      "grade": 1,
+      "weekday": 1,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-006",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "matematikk",
+      "grade": 1,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-007",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "naturfag",
+      "grade": 1,
+      "weekday": 2,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-008",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-musikk",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "musikk",
+      "grade": 1,
+      "weekday": 2,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Musikkrom",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-009",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "krle",
+      "grade": 1,
+      "weekday": 2,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-010",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "norsk",
+      "grade": 1,
+      "weekday": 2,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-011",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "naturfag",
+      "grade": 1,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-012",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "samfunnsfag",
+      "grade": 1,
+      "weekday": 3,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-013",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "krle",
+      "grade": 1,
+      "weekday": 3,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-014",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "norsk",
+      "grade": 1,
+      "weekday": 3,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-015",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "matematikk",
+      "grade": 1,
+      "weekday": 3,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-016",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "samfunnsfag",
+      "grade": 1,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-017",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "krle",
+      "grade": 1,
+      "weekday": 4,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-018",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "norsk",
+      "grade": 1,
+      "weekday": 4,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-019",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "kroppsoving",
+      "grade": 1,
+      "weekday": 4,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Gymsal",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-020",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "norsk",
+      "grade": 1,
+      "weekday": 4,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-021",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "krle",
+      "grade": 1,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-022",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "norsk",
+      "grade": 1,
+      "weekday": 5,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-023",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "matematikk",
+      "grade": 1,
+      "weekday": 5,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-024",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "norsk",
+      "grade": 1,
+      "weekday": 5,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-025",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-1a",
+      "role": "laerer",
+      "className": "1A",
+      "subject": "matematikk",
+      "grade": 1,
+      "weekday": 5,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 101",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-026",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "matematikk",
+      "grade": 2,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-027",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "naturfag",
+      "grade": 2,
+      "weekday": 1,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-028",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "samfunnsfag",
+      "grade": 2,
+      "weekday": 1,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-029",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "krle",
+      "grade": 2,
+      "weekday": 1,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-030",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "norsk",
+      "grade": 2,
+      "weekday": 1,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-031",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "naturfag",
+      "grade": 2,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-032",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "samfunnsfag",
+      "grade": 2,
+      "weekday": 2,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-033",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "krle",
+      "grade": 2,
+      "weekday": 2,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-034",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "norsk",
+      "grade": 2,
+      "weekday": 2,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-035",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "matematikk",
+      "grade": 2,
+      "weekday": 2,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-036",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "samfunnsfag",
+      "grade": 2,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-037",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "krle",
+      "grade": 2,
+      "weekday": 3,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-038",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-musikk",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "kunst_og_handverk",
+      "grade": 2,
+      "weekday": 3,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Musikkrom",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-039",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "matematikk",
+      "grade": 2,
+      "weekday": 3,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-040",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "norsk",
+      "grade": 2,
+      "weekday": 3,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-041",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "krle",
+      "grade": 2,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-042",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "norsk",
+      "grade": 2,
+      "weekday": 4,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-043",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "matematikk",
+      "grade": 2,
+      "weekday": 4,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-044",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "norsk",
+      "grade": 2,
+      "weekday": 4,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-045",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "matematikk",
+      "grade": 2,
+      "weekday": 4,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-046",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "norsk",
+      "grade": 2,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-047",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "matematikk",
+      "grade": 2,
+      "weekday": 5,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-048",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "norsk",
+      "grade": 2,
+      "weekday": 5,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-049",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "kroppsoving",
+      "grade": 2,
+      "weekday": 5,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Gymsal",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-050",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-2a",
+      "role": "laerer",
+      "className": "2A",
+      "subject": "naturfag",
+      "grade": 2,
+      "weekday": 5,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 102",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-051",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "naturfag",
+      "grade": 3,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-052",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "samfunnsfag",
+      "grade": 3,
+      "weekday": 1,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-053",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "krle",
+      "grade": 3,
+      "weekday": 1,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-054",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "kroppsoving",
+      "grade": 3,
+      "weekday": 1,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Gymsal",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-055",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 1,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-056",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "samfunnsfag",
+      "grade": 3,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-057",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "krle",
+      "grade": 3,
+      "weekday": 2,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-058",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "norsk",
+      "grade": 3,
+      "weekday": 2,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-059",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 2,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-060",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "norsk",
+      "grade": 3,
+      "weekday": 2,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-061",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "krle",
+      "grade": 3,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-062",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "norsk",
+      "grade": 3,
+      "weekday": 3,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-063",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 3,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-064",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "norsk",
+      "grade": 3,
+      "weekday": 3,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-065",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 3,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-066",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "norsk",
+      "grade": 3,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-067",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 4,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-068",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-musikk",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "musikk",
+      "grade": 3,
+      "weekday": 4,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Musikkrom",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-069",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 4,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-070",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "naturfag",
+      "grade": 3,
+      "weekday": 4,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-071",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-072",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "norsk",
+      "grade": 3,
+      "weekday": 5,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-073",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "matematikk",
+      "grade": 3,
+      "weekday": 5,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-074",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "naturfag",
+      "grade": 3,
+      "weekday": 5,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-075",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-3a",
+      "role": "laerer",
+      "className": "3A",
+      "subject": "samfunnsfag",
+      "grade": 3,
+      "weekday": 5,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 103",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-076",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "samfunnsfag",
+      "grade": 4,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-077",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "krle",
+      "grade": 4,
+      "weekday": 1,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-078",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "norsk",
+      "grade": 4,
+      "weekday": 1,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-079",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 1,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-080",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "norsk",
+      "grade": 4,
+      "weekday": 1,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-081",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "krle",
+      "grade": 4,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-082",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "norsk",
+      "grade": 4,
+      "weekday": 2,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-083",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 2,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-084",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "kroppsoving",
+      "grade": 4,
+      "weekday": 2,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Gymsal",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-085",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 2,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-086",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "norsk",
+      "grade": 4,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-087",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 3,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-088",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "norsk",
+      "grade": 4,
+      "weekday": 3,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-089",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 3,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-090",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "naturfag",
+      "grade": 4,
+      "weekday": 3,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-091",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-092",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "norsk",
+      "grade": 4,
+      "weekday": 4,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-093",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 4,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-094",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "naturfag",
+      "grade": 4,
+      "weekday": 4,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-095",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "samfunnsfag",
+      "grade": 4,
+      "weekday": 4,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-096",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "norsk",
+      "grade": 4,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-097",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "matematikk",
+      "grade": 4,
+      "weekday": 5,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-098",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-musikk",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "kunst_og_handverk",
+      "grade": 4,
+      "weekday": 5,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Musikkrom",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-099",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "samfunnsfag",
+      "grade": 4,
+      "weekday": 5,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-100",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-4a",
+      "role": "laerer",
+      "className": "4A",
+      "subject": "krle",
+      "grade": 4,
+      "weekday": 5,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 104",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-101",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "krle",
+      "grade": 5,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-102",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 1,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-103",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-musikk",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "musikk",
+      "grade": 5,
+      "weekday": 1,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Musikkrom",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-104",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 1,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-105",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 1,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-106",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "naturfag",
+      "grade": 5,
+      "weekday": 1,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-107",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-108",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 2,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-109",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 2,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-110",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 2,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-111",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "naturfag",
+      "grade": 5,
+      "weekday": 2,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-112",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "samfunnsfag",
+      "grade": 5,
+      "weekday": 2,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-113",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "engelsk",
+      "grade": 5,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-114",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 3,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-115",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 3,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-116",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "kroppsoving",
+      "grade": 5,
+      "weekday": 3,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Gymsal",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-117",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "samfunnsfag",
+      "grade": 5,
+      "weekday": 3,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-118",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "krle",
+      "grade": 5,
+      "weekday": 3,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-119",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-120",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 4,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-121",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "naturfag",
+      "grade": 5,
+      "weekday": 4,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-122",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "samfunnsfag",
+      "grade": 5,
+      "weekday": 4,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-123",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "krle",
+      "grade": 5,
+      "weekday": 4,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-124",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 4,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-125",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-126",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "naturfag",
+      "grade": 5,
+      "weekday": 5,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-127",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "samfunnsfag",
+      "grade": 5,
+      "weekday": 5,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-128",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "krle",
+      "grade": 5,
+      "weekday": 5,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-129",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "norsk",
+      "grade": 5,
+      "weekday": 5,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-130",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-5a",
+      "role": "laerer",
+      "className": "5A",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 5,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 105",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-131",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-132",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "matematikk",
+      "grade": 6,
+      "weekday": 1,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-133",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 1,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-134",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "matematikk",
+      "grade": 6,
+      "weekday": 1,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-135",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "naturfag",
+      "grade": 6,
+      "weekday": 1,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-136",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "samfunnsfag",
+      "grade": 6,
+      "weekday": 1,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-137",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "matematikk",
+      "grade": 6,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-138",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 2,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-139",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "matematikk",
+      "grade": 6,
+      "weekday": 2,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-140",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "naturfag",
+      "grade": 6,
+      "weekday": 2,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-141",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-musikk",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "kunst_og_handverk",
+      "grade": 6,
+      "weekday": 2,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Musikkrom",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-142",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "krle",
+      "grade": 6,
+      "weekday": 2,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-143",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-144",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "engelsk",
+      "grade": 6,
+      "weekday": 3,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-145",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "naturfag",
+      "grade": 6,
+      "weekday": 3,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-146",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "samfunnsfag",
+      "grade": 6,
+      "weekday": 3,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-147",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "krle",
+      "grade": 6,
+      "weekday": 3,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-148",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 3,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-149",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "matematikk",
+      "grade": 6,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-150",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "naturfag",
+      "grade": 6,
+      "weekday": 4,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-151",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "samfunnsfag",
+      "grade": 6,
+      "weekday": 4,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-152",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "krle",
+      "grade": 6,
+      "weekday": 4,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-153",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 4,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-154",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "kroppsoving",
+      "grade": 6,
+      "weekday": 4,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Gymsal",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-155",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "naturfag",
+      "grade": 6,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-156",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "samfunnsfag",
+      "grade": 6,
+      "weekday": 5,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-157",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "krle",
+      "grade": 6,
+      "weekday": 5,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-158",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 5,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-159",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "matematikk",
+      "grade": 6,
+      "weekday": 5,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-160",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-6a",
+      "role": "laerer",
+      "className": "6A",
+      "subject": "norsk",
+      "grade": 6,
+      "weekday": 5,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 106",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-161",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "matematikk",
+      "grade": 7,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-162",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "norsk",
+      "grade": 7,
+      "weekday": 1,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-163",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "matematikk",
+      "grade": 7,
+      "weekday": 1,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-164",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "naturfag",
+      "grade": 7,
+      "weekday": 1,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-165",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "samfunnsfag",
+      "grade": 7,
+      "weekday": 1,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-166",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "krle",
+      "grade": 7,
+      "weekday": 1,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-167",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "norsk",
+      "grade": 7,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-168",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "matematikk",
+      "grade": 7,
+      "weekday": 2,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-169",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "naturfag",
+      "grade": 7,
+      "weekday": 2,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-170",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "samfunnsfag",
+      "grade": 7,
+      "weekday": 2,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-171",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "krle",
+      "grade": 7,
+      "weekday": 2,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-172",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "norsk",
+      "grade": 7,
+      "weekday": 2,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-173",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "matematikk",
+      "grade": 7,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-174",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "naturfag",
+      "grade": 7,
+      "weekday": 3,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-175",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "engelsk",
+      "grade": 7,
+      "weekday": 3,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-176",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "krle",
+      "grade": 7,
+      "weekday": 3,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-177",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-musikk",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "musikk",
+      "grade": 7,
+      "weekday": 3,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Musikkrom",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-178",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "matematikk",
+      "grade": 7,
+      "weekday": 3,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-179",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "naturfag",
+      "grade": 7,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-180",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "samfunnsfag",
+      "grade": 7,
+      "weekday": 4,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-181",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "krle",
+      "grade": 7,
+      "weekday": 4,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-182",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "norsk",
+      "grade": 7,
+      "weekday": 4,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-183",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "matematikk",
+      "grade": 7,
+      "weekday": 4,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-184",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "norsk",
+      "grade": 7,
+      "weekday": 4,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-185",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "samfunnsfag",
+      "grade": 7,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "09:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-186",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "krle",
+      "grade": 7,
+      "weekday": 5,
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-187",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "norsk",
+      "grade": 7,
+      "weekday": 5,
+      "startTime": "10:15",
+      "endTime": "11:00",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-188",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "matematikk",
+      "grade": 7,
+      "weekday": 5,
+      "startTime": "11:00",
+      "endTime": "11:45",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-189",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-7a",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "norsk",
+      "grade": 7,
+      "weekday": 5,
+      "startTime": "12:30",
+      "endTime": "13:15",
+      "room": "Rom 107",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-190",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-gym",
+      "role": "laerer",
+      "className": "7A",
+      "subject": "kroppsoving",
+      "grade": 7,
+      "weekday": 5,
+      "startTime": "13:15",
+      "endTime": "14:00",
+      "room": "Gymsal",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-191",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-1",
+      "role": "assistent",
+      "className": "1A",
+      "subject": null,
+      "grade": 1,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-192",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-1",
+      "role": "assistent",
+      "className": "1A",
+      "subject": null,
+      "grade": 1,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-193",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-1",
+      "role": "assistent",
+      "className": "1A",
+      "subject": null,
+      "grade": 1,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-194",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-1",
+      "role": "assistent",
+      "className": "1A",
+      "subject": null,
+      "grade": 1,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-195",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-1",
+      "role": "assistent",
+      "className": "1A",
+      "subject": null,
+      "grade": 1,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-196",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-2",
+      "role": "assistent",
+      "className": "2A",
+      "subject": null,
+      "grade": 2,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-197",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-2",
+      "role": "assistent",
+      "className": "2A",
+      "subject": null,
+      "grade": 2,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-198",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-2",
+      "role": "assistent",
+      "className": "2A",
+      "subject": null,
+      "grade": 2,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-199",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-2",
+      "role": "assistent",
+      "className": "2A",
+      "subject": null,
+      "grade": 2,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-200",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-2",
+      "role": "assistent",
+      "className": "2A",
+      "subject": null,
+      "grade": 2,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-201",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-3",
+      "role": "assistent",
+      "className": "3A",
+      "subject": null,
+      "grade": 3,
+      "weekday": 1,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-202",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-3",
+      "role": "assistent",
+      "className": "3A",
+      "subject": null,
+      "grade": 3,
+      "weekday": 2,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-203",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-3",
+      "role": "assistent",
+      "className": "3A",
+      "subject": null,
+      "grade": 3,
+      "weekday": 3,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-204",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-3",
+      "role": "assistent",
+      "className": "3A",
+      "subject": null,
+      "grade": 3,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-205",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ass-3",
+      "role": "assistent",
+      "className": "3A",
+      "subject": null,
+      "grade": 3,
+      "weekday": 5,
+      "startTime": "08:30",
+      "endTime": "13:15",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-206",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-1",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 1,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-207",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-1",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 2,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-208",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-1",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 3,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-209",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-1",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 4,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-210",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-1",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 5,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-211",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-2",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 1,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-212",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-2",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 2,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-213",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-2",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 3,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-214",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-2",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 4,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  },
+  {
+    "id": "tt-215",
+    "data": {
+      "tenantId": "fjellvik",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-sfo-2",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 5,
+      "startTime": "13:15",
+      "endTime": "16:30",
+      "room": "SFO-basen",
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-18"
+    }
+  }
+]

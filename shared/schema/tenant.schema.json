@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/tenant.schema.json",
+  "title": "Tenant",
+  "description": "A municipality or private school owner (plan 10.1: the data controller). Collection: tenants. No real personal data may be stored before dataProcessingAgreementSignedOn is set.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name", "orgNumber", "contactName", "contactEmail", "agreementStatus",
+    "dataProcessingAgreementSignedOn"
+  ],
+  "properties": {
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "orgNumber": {
+      "description": "Norwegian organisation number, nine digits.",
+      "type": "string",
+      "pattern": "^[0-9]{9}$"
+    },
+    "contactName": {
+      "anyOf": [{ "type": "string", "minLength": 1, "maxLength": 120 }, { "type": "null" }]
+    },
+    "contactEmail": {
+      "anyOf": [{ "type": "string", "format": "email" }, { "type": "null" }]
+    },
+    "agreementStatus": { "type": "string", "enum": ["pilot", "active", "ended"] },
+    "dataProcessingAgreementSignedOn": {
+      "description": "Date the data processing agreement (GDPR art. 28) was signed.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/LocalDate" }, { "type": "null" }]
+    }
+  }
+}

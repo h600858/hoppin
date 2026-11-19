@@ -1,0 +1,280 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "runId": "run-2026-11-19-0530",
+      "wave": 1,
+      "inputHash": "9f2c1a6e0b7d4c3a8e5f1b2d6c9a0e7f3b4d5c6a7e8f9a0b1c2d3e4f5a6b7c8d",
+      "algorithmVersion": "flow-1",
+      "configVersion": 1,
+      "createdAt": "2026-11-19T05:30:00.000Z",
+      "candidates": [
+        {
+          "substituteId": "sub-kari",
+          "excludedBy": null,
+          "score": 78.5,
+          "components": {
+            "subjectMatch": 1,
+            "classFamiliarity": 0.72,
+            "acceptLikelihood": 0.6,
+            "reliability": 0.9,
+            "fairness": 0.5,
+            "preferenceMatch": 1,
+            "proximity": 0.8
+          },
+          "selected": true
+        },
+        {
+          "substituteId": "sub-per",
+          "excludedBy": null,
+          "score": 61,
+          "components": {
+            "subjectMatch": 0.1,
+            "classFamiliarity": 0.72,
+            "acceptLikelihood": 0.6,
+            "reliability": 0.9,
+            "fairness": 0.5,
+            "preferenceMatch": 1,
+            "proximity": 0.8
+          },
+          "selected": false
+        },
+        {
+          "substituteId": "sub-ola",
+          "excludedBy": "police_certificate",
+          "score": null,
+          "components": null,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "shiftId": "shift-001",
+      "runId": "run-2026-11-19-0530",
+      "wave": 1,
+      "inputHash": "9f2c1a6e0b7d4c3a8e5f1b2d6c9a0e7f3b4d5c6a7e8f9a0b1c2d3e4f5a6b7c8d",
+      "algorithmVersion": "flow-1",
+      "configVersion": 1,
+      "createdAt": "2026-11-19T05:30:00.000Z",
+      "candidates": []
+    }
+  ],
+  "invalid": [
+    {
+      "why": "unknown filter name",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "runId": "run-2026-11-19-0530",
+        "wave": 1,
+        "inputHash": "9f2c1a6e0b7d4c3a8e5f1b2d6c9a0e7f3b4d5c6a7e8f9a0b1c2d3e4f5a6b7c8d",
+        "algorithmVersion": "flow-1",
+        "configVersion": 1,
+        "createdAt": "2026-11-19T05:30:00.000Z",
+        "candidates": [
+          {
+            "substituteId": "sub-kari",
+            "excludedBy": null,
+            "score": 78.5,
+            "components": {
+              "subjectMatch": 1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 0.5,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": true
+          },
+          {
+            "substituteId": "sub-per",
+            "excludedBy": null,
+            "score": 61,
+            "components": {
+              "subjectMatch": 0.1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 0.5,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": false
+          },
+          {
+            "substituteId": "sub-ola",
+            "excludedBy": "politiattest",
+            "score": null,
+            "components": null,
+            "selected": false
+          }
+        ]
+      }
+    },
+    {
+      "why": "component score above 1",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "runId": "run-2026-11-19-0530",
+        "wave": 1,
+        "inputHash": "9f2c1a6e0b7d4c3a8e5f1b2d6c9a0e7f3b4d5c6a7e8f9a0b1c2d3e4f5a6b7c8d",
+        "algorithmVersion": "flow-1",
+        "configVersion": 1,
+        "createdAt": "2026-11-19T05:30:00.000Z",
+        "candidates": [
+          {
+            "substituteId": "sub-kari",
+            "excludedBy": null,
+            "score": 78.5,
+            "components": {
+              "subjectMatch": 1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 1.2,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": true
+          },
+          {
+            "substituteId": "sub-per",
+            "excludedBy": null,
+            "score": 61,
+            "components": {
+              "subjectMatch": 0.1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 0.5,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": false
+          },
+          {
+            "substituteId": "sub-ola",
+            "excludedBy": "police_certificate",
+            "score": null,
+            "components": null,
+            "selected": false
+          }
+        ]
+      }
+    },
+    {
+      "why": "input hash must be 64 hex characters",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "runId": "run-2026-11-19-0530",
+        "wave": 1,
+        "inputHash": "abc123",
+        "algorithmVersion": "flow-1",
+        "configVersion": 1,
+        "createdAt": "2026-11-19T05:30:00.000Z",
+        "candidates": [
+          {
+            "substituteId": "sub-kari",
+            "excludedBy": null,
+            "score": 78.5,
+            "components": {
+              "subjectMatch": 1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 0.5,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": true
+          },
+          {
+            "substituteId": "sub-per",
+            "excludedBy": null,
+            "score": 61,
+            "components": {
+              "subjectMatch": 0.1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 0.5,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": false
+          },
+          {
+            "substituteId": "sub-ola",
+            "excludedBy": "police_certificate",
+            "score": null,
+            "components": null,
+            "selected": false
+          }
+        ]
+      }
+    },
+    {
+      "why": "config version starts at 1",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "shiftId": "shift-001",
+        "runId": "run-2026-11-19-0530",
+        "wave": 1,
+        "inputHash": "9f2c1a6e0b7d4c3a8e5f1b2d6c9a0e7f3b4d5c6a7e8f9a0b1c2d3e4f5a6b7c8d",
+        "algorithmVersion": "flow-1",
+        "configVersion": 0,
+        "createdAt": "2026-11-19T05:30:00.000Z",
+        "candidates": [
+          {
+            "substituteId": "sub-kari",
+            "excludedBy": null,
+            "score": 78.5,
+            "components": {
+              "subjectMatch": 1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 0.5,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": true
+          },
+          {
+            "substituteId": "sub-per",
+            "excludedBy": null,
+            "score": 61,
+            "components": {
+              "subjectMatch": 0.1,
+              "classFamiliarity": 0.72,
+              "acceptLikelihood": 0.6,
+              "reliability": 0.9,
+              "fairness": 0.5,
+              "preferenceMatch": 1,
+              "proximity": 0.8
+            },
+            "selected": false
+          },
+          {
+            "substituteId": "sub-ola",
+            "excludedBy": "police_certificate",
+            "score": null,
+            "components": null,
+            "selected": false
+          }
+        ]
+      }
+    }
+  ]
+}

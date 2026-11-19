@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/escalation.schema.json",
+  "title": "Escalation",
+  "description": "A shift handed to a person after the deadline (plan 7.7). Collection: escalations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "shiftId", "decisionId", "notifiedStaffIds",
+    "suggestions", "createdAt", "resolvedAt", "resolvedBy", "resolution"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "shiftId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "decisionId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "notifiedStaffIds": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/DocumentId" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "suggestions": {
+      "description": "The best remaining candidates, ranked, with a short reason each.",
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "title": "EscalationSuggestion",
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["substituteId", "rank", "score", "reason"],
+        "properties": {
+          "substituteId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+          "rank": { "type": "integer", "minimum": 1 },
+          "score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "reason": { "type": "string", "minLength": 1, "maxLength": 200 }
+        }
+      }
+    },
+    "createdAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "resolvedAt": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Instant" }, { "type": "null" }]
+    },
+    "resolvedBy": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "resolution": {
+      "description": "How it was solved, counted in the statistics. Null while open.",
+      "anyOf": [
+        {
+          "title": "EscalationResolution",
+          "type": "string",
+          "enum": [
+            "manual_assignment", "internal_staff", "merged_groups",
+            "other_internal", "withdrawn"
+          ]
+        },
+        { "type": "null" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "substituteId": "sub-kari",
+      "kind": "unavailable",
+      "startsAt": "2026-11-20T00:00:00.000Z",
+      "endsAt": "2026-11-21T00:00:00.000Z",
+      "source": "substitute",
+      "createdAt": "2026-11-19T06:41:00.000Z"
+    },
+    {
+      "tenantId": "bergen",
+      "substituteId": "sub-kari",
+      "kind": "available",
+      "startsAt": "2026-11-20T00:00:00.000Z",
+      "endsAt": "2026-11-21T00:00:00.000Z",
+      "source": "admin",
+      "createdAt": "2026-11-19T06:41:00.000Z"
+    }
+  ],
+  "invalid": [
+    {
+      "why": "no reason is stored",
+      "doc": {
+        "tenantId": "bergen",
+        "substituteId": "sub-kari",
+        "kind": "unavailable",
+        "startsAt": "2026-11-20T00:00:00.000Z",
+        "endsAt": "2026-11-21T00:00:00.000Z",
+        "source": "substitute",
+        "createdAt": "2026-11-19T06:41:00.000Z",
+        "reason": "syk"
+      }
+    },
+    {
+      "why": "busy is derived from assignments, not stored",
+      "doc": {
+        "tenantId": "bergen",
+        "substituteId": "sub-kari",
+        "kind": "busy",
+        "startsAt": "2026-11-20T00:00:00.000Z",
+        "endsAt": "2026-11-21T00:00:00.000Z",
+        "source": "substitute",
+        "createdAt": "2026-11-19T06:41:00.000Z"
+      }
+    },
+    {
+      "why": "startsAt must be an instant",
+      "doc": {
+        "tenantId": "bergen",
+        "substituteId": "sub-kari",
+        "kind": "unavailable",
+        "startsAt": "2026-11-20",
+        "endsAt": "2026-11-21T00:00:00.000Z",
+        "source": "substitute",
+        "createdAt": "2026-11-19T06:41:00.000Z"
+      }
+    }
+  ]
+}
