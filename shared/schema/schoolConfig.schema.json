@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/schoolConfig.schema.json",
+  "title": "SchoolConfig",
+  "description": "Matching and dispatch configuration for one school (rule 9). Collection: schoolConfigs, document ID is the school ID. Each version is copied to schoolConfigs/{schoolId}/versions/{version}. The police certificate filter is deliberately not configurable (rule 10).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "version", "updatedAt", "updatedBy", "dispatchEnabled",
+    "weights", "filters", "waves", "quietHours", "undoWindowSeconds",
+    "smsFallbackDelaySeconds", "maxSmsPerDay"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "version": { "type": "integer", "minimum": 1 },
+    "updatedAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "updatedBy": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "dispatchEnabled": {
+      "description": "Kill switch. False stops all outgoing messages for the school (plan 8.4).",
+      "type": "boolean"
+    },
+    "weights": {
+      "title": "ScoreWeights",
+      "description": "Each 0 to 1. Must sum to 1, which the matching engine checks (step 3).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subjectMatch", "classFamiliarity", "acceptLikelihood", "reliability",
+        "fairness", "preferenceMatch", "proximity"
+      ],
+      "properties": {
+        "subjectMatch": { "type": "number", "minimum": 0, "maximum": 1 },
+        "classFamiliarity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "acceptLikelihood": { "type": "number", "minimum": 0, "maximum": 1 },
+        "reliability": { "type": "number", "minimum": 0, "maximum": 1 },
+        "fairness": { "type": "number", "minimum": 0, "maximum": 1 },
+        "preferenceMatch": { "type": "number", "minimum": 0, "maximum": 1 },
+        "proximity": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "filters": {
+      "title": "HardFilters",
+      "description": "Hard filters that a school may switch off (plan 7.2). Active status and police certificate always apply.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "roleMatch", "timeCollision", "classBlocks", "workingTimeLimits",
+        "alreadyAsked", "formalCompetenceSubjects"
+      ],
+      "properties": {
+        "roleMatch": { "type": "boolean" },
+        "timeCollision": { "type": "boolean" },
+        "classBlocks": { "type": "boolean" },
+        "workingTimeLimits": { "type": "boolean" },
+        "alreadyAsked": { "type": "boolean" },
+        "formalCompetenceSubjects": {
+          "description": "Subjects where only formally qualified substitutes may be asked.",
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/Subject" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "waves": {
+      "title": "WaveTable",
+      "description": "Wave rules per urgency, chosen by time until the shift starts (plan 7.5).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calm", "normal", "urgent", "critical"],
+      "properties": {
+        "calm": { "$ref": "#/$defs/WaveRule" },
+        "normal": { "$ref": "#/$defs/WaveRule" },
+        "urgent": { "$ref": "#/$defs/WaveRule" },
+        "critical": { "$ref": "#/$defs/WaveRule" }
+      }
+    },
+    "quietHours": {
+      "title": "QuietHours",
+      "description": "No messages between start and end, local time. The window may pass midnight.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "$ref": "common.schema.json#/$defs/LocalTime" },
+        "end": { "$ref": "common.schema.json#/$defs/LocalTime" }
+      }
+    },
+    "undoWindowSeconds": { "type": "integer", "minimum": 0, "maximum": 600 },
+    "smsFallbackDelaySeconds": {
+      "description": "Seconds to wait for a push to be opened before sending SMS.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 900
+    },
+    "maxSmsPerDay": {
+      "description": "Safety cap per school per day (plan 8.4).",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "$defs": {
+    "WaveRule": {
+      "title": "WaveRule",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minMinutesBeforeStart", "waveSize", "intervalMinutes", "deadlineMinutes"],
+      "properties": {
+        "minMinutesBeforeStart": {
+          "description": "This rule applies when at least this many minutes remain until start.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "waveSize": {
+          "description": "Candidates per wave. Null means all qualified.",
+          "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }]
+        },
+        "intervalMinutes": {
+          "description": "Minutes between waves. Null means a single dispatch.",
+          "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }]
+        },
+        "deadlineMinutes": {
+          "description": "Minutes from first dispatch until escalation.",
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

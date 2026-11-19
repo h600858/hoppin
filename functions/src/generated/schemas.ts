@@ -3,6 +3,85 @@
 export const schemas = [
   {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/absence.schema.json",
+    "title": "Absence",
+    "description": "A reported absence or a need created by an admin. Collection: absences. No reason category is stored (data minimisation). The comment is never part of outgoing messages (rule 11).",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "staffId",
+      "startsAt",
+      "endsAt",
+      "comment",
+      "source",
+      "status",
+      "reportedAt",
+      "reportedBy"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "staffId": {
+        "description": "Null for needs without a person, for example a vacant position.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "startsAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "endsAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "comment": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "source": {
+        "description": "staff: reported in the mobile app. admin: created in the admin web app.",
+        "type": "string",
+        "enum": [
+          "staff",
+          "admin"
+        ]
+      },
+      "status": {
+        "description": "withdrawn when the staff member reports back healthy.",
+        "type": "string",
+        "enum": [
+          "active",
+          "withdrawn"
+        ]
+      },
+      "reportedAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "reportedBy": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://schema.innhopp.no/common.schema.json",
     "title": "CommonDefinitions",
     "description": "Shared building blocks. Not a collection.",
@@ -52,6 +131,12 @@ export const schemas = [
         "type": "string",
         "minLength": 1,
         "maxLength": 16
+      },
+      "PhoneNumber": {
+        "title": "PhoneNumber",
+        "description": "E.164, for example +4791234567.",
+        "type": "string",
+        "pattern": "^\\+[1-9][0-9]{7,14}$"
       },
       "Role": {
         "title": "Role",
@@ -109,6 +194,15 @@ export const schemas = [
           "superseded",
           "withdrawn",
           "undone"
+        ]
+      },
+      "SubstituteStatus": {
+        "title": "SubstituteStatus",
+        "type": "string",
+        "enum": [
+          "active",
+          "paused",
+          "left"
         ]
       },
       "Channel": {
@@ -210,6 +304,308 @@ export const schemas = [
             "type": "null"
           }
         ]
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/school.schema.json",
+    "title": "School",
+    "description": "A school. Collection: schools. Configuration lives in schoolConfigs.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "name",
+      "timeZone",
+      "grades",
+      "escalationStaffIds",
+      "sharesSubstitutePool",
+      "active"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "timeZone": {
+        "description": "Local times in timetable and config are read in this zone.",
+        "type": "string",
+        "enum": [
+          "Europe/Oslo"
+        ]
+      },
+      "grades": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/Grade"
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "escalationStaffIds": {
+        "description": "Staff who receive escalations, in order.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/DocumentId"
+        },
+        "uniqueItems": true
+      },
+      "sharesSubstitutePool": {
+        "description": "Whether substitutes from other schools in the tenant may be asked (plan 7.5).",
+        "type": "boolean"
+      },
+      "active": {
+        "type": "boolean"
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/schoolConfig.schema.json",
+    "title": "SchoolConfig",
+    "description": "Matching and dispatch configuration for one school (rule 9). Collection: schoolConfigs, document ID is the school ID. Each version is copied to schoolConfigs/{schoolId}/versions/{version}. The police certificate filter is deliberately not configurable (rule 10).",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "version",
+      "updatedAt",
+      "updatedBy",
+      "dispatchEnabled",
+      "weights",
+      "filters",
+      "waves",
+      "quietHours",
+      "undoWindowSeconds",
+      "smsFallbackDelaySeconds",
+      "maxSmsPerDay"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "version": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "updatedAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "updatedBy": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "dispatchEnabled": {
+        "description": "Kill switch. False stops all outgoing messages for the school (plan 8.4).",
+        "type": "boolean"
+      },
+      "weights": {
+        "title": "ScoreWeights",
+        "description": "Each 0 to 1. Must sum to 1, which the matching engine checks (step 3).",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "subjectMatch",
+          "classFamiliarity",
+          "acceptLikelihood",
+          "reliability",
+          "fairness",
+          "preferenceMatch",
+          "proximity"
+        ],
+        "properties": {
+          "subjectMatch": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "classFamiliarity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "acceptLikelihood": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "reliability": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "fairness": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "preferenceMatch": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "proximity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      },
+      "filters": {
+        "title": "HardFilters",
+        "description": "Hard filters that a school may switch off (plan 7.2). Active status and police certificate always apply.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "roleMatch",
+          "timeCollision",
+          "classBlocks",
+          "workingTimeLimits",
+          "alreadyAsked",
+          "formalCompetenceSubjects"
+        ],
+        "properties": {
+          "roleMatch": {
+            "type": "boolean"
+          },
+          "timeCollision": {
+            "type": "boolean"
+          },
+          "classBlocks": {
+            "type": "boolean"
+          },
+          "workingTimeLimits": {
+            "type": "boolean"
+          },
+          "alreadyAsked": {
+            "type": "boolean"
+          },
+          "formalCompetenceSubjects": {
+            "description": "Subjects where only formally qualified substitutes may be asked.",
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/Subject"
+            },
+            "uniqueItems": true
+          }
+        }
+      },
+      "waves": {
+        "title": "WaveTable",
+        "description": "Wave rules per urgency, chosen by time until the shift starts (plan 7.5).",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "calm",
+          "normal",
+          "urgent",
+          "critical"
+        ],
+        "properties": {
+          "calm": {
+            "$ref": "#/$defs/WaveRule"
+          },
+          "normal": {
+            "$ref": "#/$defs/WaveRule"
+          },
+          "urgent": {
+            "$ref": "#/$defs/WaveRule"
+          },
+          "critical": {
+            "$ref": "#/$defs/WaveRule"
+          }
+        }
+      },
+      "quietHours": {
+        "title": "QuietHours",
+        "description": "No messages between start and end, local time. The window may pass midnight.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "start",
+          "end"
+        ],
+        "properties": {
+          "start": {
+            "$ref": "common.schema.json#/$defs/LocalTime"
+          },
+          "end": {
+            "$ref": "common.schema.json#/$defs/LocalTime"
+          }
+        }
+      },
+      "undoWindowSeconds": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 600
+      },
+      "smsFallbackDelaySeconds": {
+        "description": "Seconds to wait for a push to be opened before sending SMS.",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 900
+      },
+      "maxSmsPerDay": {
+        "description": "Safety cap per school per day (plan 8.4).",
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "$defs": {
+      "WaveRule": {
+        "title": "WaveRule",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "minMinutesBeforeStart",
+          "waveSize",
+          "intervalMinutes",
+          "deadlineMinutes"
+        ],
+        "properties": {
+          "minMinutesBeforeStart": {
+            "description": "This rule applies when at least this many minutes remain until start.",
+            "type": "integer",
+            "minimum": 0
+          },
+          "waveSize": {
+            "description": "Candidates per wave. Null means all qualified.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "intervalMinutes": {
+            "description": "Minutes between waves. Null means a single dispatch.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "deadlineMinutes": {
+            "description": "Minutes from first dispatch until escalation.",
+            "type": "integer",
+            "minimum": 1
+          }
+        }
       }
     }
   },
@@ -330,6 +726,417 @@ export const schemas = [
       },
       "createdAt": {
         "$ref": "common.schema.json#/$defs/Instant"
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/staff.schema.json",
+    "title": "Staff",
+    "description": "A permanent employee who can report absence. Collection: staff.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "name",
+      "role",
+      "phone",
+      "authUid",
+      "classNames",
+      "subjects",
+      "isSchoolAdmin",
+      "active"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "role": {
+        "$ref": "common.schema.json#/$defs/Role"
+      },
+      "phone": {
+        "$ref": "common.schema.json#/$defs/PhoneNumber"
+      },
+      "authUid": {
+        "description": "Firebase Auth user, set at first login.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "classNames": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/ClassName"
+        },
+        "uniqueItems": true
+      },
+      "subjects": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/Subject"
+        },
+        "uniqueItems": true
+      },
+      "isSchoolAdmin": {
+        "description": "May use the admin web app for this school.",
+        "type": "boolean"
+      },
+      "active": {
+        "type": "boolean"
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/substitute.schema.json",
+    "title": "Substitute",
+    "description": "A substitute in the register (plan 6.2). Collection: substitutes. Computed history for matching is added in step 3.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolIds",
+      "name",
+      "phone",
+      "email",
+      "authUid",
+      "status",
+      "roles",
+      "qualifications",
+      "preferences",
+      "classBlocks"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolIds": {
+        "description": "Schools the substitute works for.",
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/DocumentId"
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "phone": {
+        "$ref": "common.schema.json#/$defs/PhoneNumber"
+      },
+      "email": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "email"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "authUid": {
+        "description": "Firebase Auth user, set at first login. Null for substitutes without the app.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/DocumentId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "status": {
+        "$ref": "common.schema.json#/$defs/SubstituteStatus"
+      },
+      "roles": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/Role"
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "qualifications": {
+        "title": "Qualifications",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "teacherEducation",
+          "certificates",
+          "teachingSubjects",
+          "policeCertificate"
+        ],
+        "properties": {
+          "teacherEducation": {
+            "type": "boolean"
+          },
+          "certificates": {
+            "description": "Trade certificates, for example barne_og_ungdomsarbeider.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "uniqueItems": true
+          },
+          "teachingSubjects": {
+            "type": "array",
+            "items": {
+              "title": "TeachingSubject",
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "subject",
+                "grades",
+                "level"
+              ],
+              "properties": {
+                "subject": {
+                  "$ref": "common.schema.json#/$defs/Subject"
+                },
+                "grades": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "common.schema.json#/$defs/Grade"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "level": {
+                  "description": "Competence level 1 to 3.",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 3
+                }
+              }
+            }
+          },
+          "policeCertificate": {
+            "description": "Null means no valid certificate registered. Hard filter (rule 10).",
+            "anyOf": [
+              {
+                "title": "PoliceCertificate",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "issuedOn",
+                  "expiresOn"
+                ],
+                "properties": {
+                  "issuedOn": {
+                    "$ref": "common.schema.json#/$defs/LocalDate"
+                  },
+                  "expiresOn": {
+                    "$ref": "common.schema.json#/$defs/LocalDate"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "preferences": {
+        "title": "SubstitutePreferences",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "weekdays",
+          "earliestStart",
+          "latestEnd",
+          "maxDaysPerWeek",
+          "preferredGrades",
+          "notificationChannel"
+        ],
+        "properties": {
+          "weekdays": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/Weekday"
+            },
+            "uniqueItems": true
+          },
+          "earliestStart": {
+            "$ref": "common.schema.json#/$defs/LocalTime"
+          },
+          "latestEnd": {
+            "$ref": "common.schema.json#/$defs/LocalTime"
+          },
+          "maxDaysPerWeek": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "preferredGrades": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/Grade"
+            },
+            "uniqueItems": true
+          },
+          "notificationChannel": {
+            "type": "string",
+            "enum": [
+              "push",
+              "sms",
+              "both"
+            ]
+          }
+        }
+      },
+      "classBlocks": {
+        "description": "Classes this substitute must not be asked for. Internal, visible to the substitute on access request (plan 6.2).",
+        "type": "array",
+        "items": {
+          "title": "ClassBlock",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schoolId",
+            "className",
+            "reason",
+            "since"
+          ],
+          "properties": {
+            "schoolId": {
+              "$ref": "common.schema.json#/$defs/DocumentId"
+            },
+            "className": {
+              "$ref": "common.schema.json#/$defs/ClassName"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            },
+            "since": {
+              "$ref": "common.schema.json#/$defs/LocalDate"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/timetableEntry.schema.json",
+    "title": "TimetableEntry",
+    "description": "One recurring lesson or duty for one staff member. Collection: timetable.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "schoolId",
+      "staffId",
+      "role",
+      "className",
+      "subject",
+      "grade",
+      "weekday",
+      "startTime",
+      "endTime",
+      "room",
+      "validFrom",
+      "validTo"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "schoolId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "staffId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "role": {
+        "$ref": "common.schema.json#/$defs/Role"
+      },
+      "className": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/ClassName"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "subject": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/Subject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "grade": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/Grade"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "weekday": {
+        "$ref": "common.schema.json#/$defs/Weekday"
+      },
+      "startTime": {
+        "$ref": "common.schema.json#/$defs/LocalTime"
+      },
+      "endTime": {
+        "$ref": "common.schema.json#/$defs/LocalTime"
+      },
+      "room": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "validFrom": {
+        "$ref": "common.schema.json#/$defs/LocalDate"
+      },
+      "validTo": {
+        "description": "Null means until further notice.",
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/LocalDate"
+          },
+          {
+            "type": "null"
+          }
+        ]
       }
     }
   }

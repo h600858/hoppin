@@ -159,6 +159,7 @@ npm run build:watch             # egen terminal: emulatoren laster ny kode autom
 npm test                        # enhetstester, uten emulator
 npm run test:emulator           # regeltester mot kjørende emulator (demo-innhopp-test)
 npm run typecheck; npm run lint
+npm run gen:types               # etter endring i shared/schema, commit src/generated
 ```
 
 Emulator UI: http://127.0.0.1:4000. CI: `.github/workflows/ci.yml` (Flutter 3.29.3,

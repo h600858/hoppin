@@ -1,0 +1,91 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ingrid",
+      "startsAt": "2026-11-19T07:00:00.000Z",
+      "endsAt": "2026-11-19T15:00:00.000Z",
+      "comment": "Prøve i matematikk i 5B, ligger på pulten.",
+      "source": "staff",
+      "status": "active",
+      "reportedAt": "2026-11-18T19:10:00.000Z",
+      "reportedBy": "uid-ingrid"
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "staffId": null,
+      "startsAt": "2026-11-19T07:00:00.000Z",
+      "endsAt": "2026-11-19T15:00:00.000Z",
+      "comment": null,
+      "source": "admin",
+      "status": "withdrawn",
+      "reportedAt": "2026-11-18T19:10:00.000Z",
+      "reportedBy": "uid-rita"
+    }
+  ],
+  "invalid": [
+    {
+      "why": "no reason category is stored (data minimisation)",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "startsAt": "2026-11-19T07:00:00.000Z",
+        "endsAt": "2026-11-19T15:00:00.000Z",
+        "comment": "Prøve i matematikk i 5B, ligger på pulten.",
+        "source": "staff",
+        "status": "active",
+        "reportedAt": "2026-11-18T19:10:00.000Z",
+        "reportedBy": "uid-ingrid",
+        "reason": "syk"
+      }
+    },
+    {
+      "why": "unknown source",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "startsAt": "2026-11-19T07:00:00.000Z",
+        "endsAt": "2026-11-19T15:00:00.000Z",
+        "comment": "Prøve i matematikk i 5B, ligger på pulten.",
+        "source": "sms",
+        "status": "active",
+        "reportedAt": "2026-11-18T19:10:00.000Z",
+        "reportedBy": "uid-ingrid"
+      }
+    },
+    {
+      "why": "comment longer than 500 characters",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "startsAt": "2026-11-19T07:00:00.000Z",
+        "endsAt": "2026-11-19T15:00:00.000Z",
+        "comment": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "source": "staff",
+        "status": "active",
+        "reportedAt": "2026-11-18T19:10:00.000Z",
+        "reportedBy": "uid-ingrid"
+      }
+    },
+    {
+      "why": "startsAt must be an instant",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "startsAt": "2026-11-19",
+        "endsAt": "2026-11-19T15:00:00.000Z",
+        "comment": "Prøve i matematikk i 5B, ligger på pulten.",
+        "source": "staff",
+        "status": "active",
+        "reportedAt": "2026-11-18T19:10:00.000Z",
+        "reportedBy": "uid-ingrid"
+      }
+    }
+  ]
+}

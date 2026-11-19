@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/timetableEntry.schema.json",
+  "title": "TimetableEntry",
+  "description": "One recurring lesson or duty for one staff member. Collection: timetable.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "staffId", "role", "className", "subject", "grade",
+    "weekday", "startTime", "endTime", "room", "validFrom", "validTo"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "staffId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "role": { "$ref": "common.schema.json#/$defs/Role" },
+    "className": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/ClassName" }, { "type": "null" }]
+    },
+    "subject": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Subject" }, { "type": "null" }]
+    },
+    "grade": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/Grade" }, { "type": "null" }]
+    },
+    "weekday": { "$ref": "common.schema.json#/$defs/Weekday" },
+    "startTime": { "$ref": "common.schema.json#/$defs/LocalTime" },
+    "endTime": { "$ref": "common.schema.json#/$defs/LocalTime" },
+    "room": {
+      "anyOf": [{ "type": "string", "minLength": 1, "maxLength": 40 }, { "type": "null" }]
+    },
+    "validFrom": { "$ref": "common.schema.json#/$defs/LocalDate" },
+    "validTo": {
+      "description": "Null means until further notice.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/LocalDate" }, { "type": "null" }]
+    }
+  }
+}

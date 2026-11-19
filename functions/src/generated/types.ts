@@ -2,62 +2,37 @@
 
 /**
  * Firestore document ID.
- *
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "DocumentId".
  */
 export type DocumentId = string;
 /**
  * Point in time, UTC, ISO 8601. Stored as Firestore Timestamp.
- *
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "Instant".
  */
 export type Instant = string;
 /**
  * Calendar date without time, YYYY-MM-DD.
- *
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "LocalDate".
  */
 export type LocalDate = string;
 /**
  * Wall clock time HH:mm in the school's time zone.
- *
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "LocalTime".
  */
 export type LocalTime = string;
 /**
  * ISO weekday, Monday is 1.
- *
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "Weekday".
  */
 export type Weekday = number;
 /**
  * Trinn 1 to 10.
- *
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "Grade".
  */
 export type Grade = number;
 /**
  * Class as the school writes it, for example 5B.
- *
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "ClassName".
  */
 export type ClassName = string;
 /**
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "Role".
+ * E.164, for example +4791234567.
  */
+export type PhoneNumber = string;
 export type Role = "laerer" | "assistent" | "sfo";
-/**
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "Subject".
- */
 export type Subject =
   | "norsk"
   | "matematikk"
@@ -72,10 +47,6 @@ export type Subject =
   | "fremmedsprak"
   | "valgfag"
   | "annet";
-/**
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "ShiftStatus".
- */
 export type ShiftStatus =
   | "pending"
   | "offering"
@@ -87,25 +58,59 @@ export type ShiftStatus =
   | "manually_assigned"
   | "unfilled"
   | "withdrawn";
-/**
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "OfferStatus".
- */
 export type OfferStatus =
   "queued" | "sent" | "accepted" | "declined" | "expired" | "superseded" | "withdrawn" | "undone";
-/**
- * This interface was referenced by `CommonDefinitions`'s JSON-Schema
- * via the `definition` "Channel".
- */
+export type SubstituteStatus = "active" | "paused" | "left";
 export type Channel = "push" | "sms";
 
-/**
- * Shared building blocks. Not a collection.
- */
-export interface CommonDefinitions {
-  [k: string]: unknown;
+export interface AllSchemas {
+  DocumentId?: DocumentId;
+  Instant?: Instant;
+  LocalDate?: LocalDate;
+  LocalTime?: LocalTime;
+  Weekday?: Weekday;
+  Grade?: Grade;
+  ClassName?: ClassName;
+  PhoneNumber?: PhoneNumber;
+  Role?: Role;
+  Subject?: Subject;
+  ShiftStatus?: ShiftStatus;
+  OfferStatus?: OfferStatus;
+  SubstituteStatus?: SubstituteStatus;
+  Channel?: Channel;
+  Absence?: Absence;
+  Offer?: Offer;
+  School?: School;
+  SchoolConfig?: SchoolConfig;
+  Shift?: Shift;
+  Staff?: Staff;
+  Substitute?: Substitute;
+  TimetableEntry?: TimetableEntry;
 }
-
+/**
+ * A reported absence or a need created by an admin. Collection: absences. No reason category is stored (data minimisation). The comment is never part of outgoing messages (rule 11).
+ */
+export interface Absence {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  /**
+   * Null for needs without a person, for example a vacant position.
+   */
+  staffId: DocumentId | null;
+  startsAt: Instant;
+  endsAt: Instant;
+  comment: string | null;
+  /**
+   * staff: reported in the mobile app. admin: created in the admin web app.
+   */
+  source: "staff" | "admin";
+  /**
+   * withdrawn when the staff member reports back healthy.
+   */
+  status: "active" | "withdrawn";
+  reportedAt: Instant;
+  reportedBy: DocumentId;
+}
 /**
  * One request to one substitute (forespørsel). Collection: offers. decisionId points to the matching run that chose the substitute (rule 8).
  */
@@ -130,7 +135,117 @@ export interface Offer {
   expiresAt: Instant;
   respondedAt: Instant | null;
 }
-
+/**
+ * A school. Collection: schools. Configuration lives in schoolConfigs.
+ */
+export interface School {
+  tenantId: DocumentId;
+  name: string;
+  /**
+   * Local times in timetable and config are read in this zone.
+   */
+  timeZone: "Europe/Oslo";
+  /**
+   * @minItems 1
+   */
+  grades: Grade[];
+  /**
+   * Staff who receive escalations, in order.
+   */
+  escalationStaffIds: DocumentId[];
+  /**
+   * Whether substitutes from other schools in the tenant may be asked (plan 7.5).
+   */
+  sharesSubstitutePool: boolean;
+  active: boolean;
+}
+/**
+ * Matching and dispatch configuration for one school (rule 9). Collection: schoolConfigs, document ID is the school ID. Each version is copied to schoolConfigs/{schoolId}/versions/{version}. The police certificate filter is deliberately not configurable (rule 10).
+ */
+export interface SchoolConfig {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  version: number;
+  updatedAt: Instant;
+  updatedBy: DocumentId;
+  /**
+   * Kill switch. False stops all outgoing messages for the school (plan 8.4).
+   */
+  dispatchEnabled: boolean;
+  weights: ScoreWeights;
+  filters: HardFilters;
+  waves: WaveTable;
+  quietHours: QuietHours;
+  undoWindowSeconds: number;
+  /**
+   * Seconds to wait for a push to be opened before sending SMS.
+   */
+  smsFallbackDelaySeconds: number;
+  /**
+   * Safety cap per school per day (plan 8.4).
+   */
+  maxSmsPerDay: number;
+}
+/**
+ * Each 0 to 1. Must sum to 1, which the matching engine checks (step 3).
+ */
+export interface ScoreWeights {
+  subjectMatch: number;
+  classFamiliarity: number;
+  acceptLikelihood: number;
+  reliability: number;
+  fairness: number;
+  preferenceMatch: number;
+  proximity: number;
+}
+/**
+ * Hard filters that a school may switch off (plan 7.2). Active status and police certificate always apply.
+ */
+export interface HardFilters {
+  roleMatch: boolean;
+  timeCollision: boolean;
+  classBlocks: boolean;
+  workingTimeLimits: boolean;
+  alreadyAsked: boolean;
+  /**
+   * Subjects where only formally qualified substitutes may be asked.
+   */
+  formalCompetenceSubjects: Subject[];
+}
+/**
+ * Wave rules per urgency, chosen by time until the shift starts (plan 7.5).
+ */
+export interface WaveTable {
+  calm: WaveRule;
+  normal: WaveRule;
+  urgent: WaveRule;
+  critical: WaveRule;
+}
+export interface WaveRule {
+  /**
+   * This rule applies when at least this many minutes remain until start.
+   */
+  minMinutesBeforeStart: number;
+  /**
+   * Candidates per wave. Null means all qualified.
+   */
+  waveSize: number | null;
+  /**
+   * Minutes between waves. Null means a single dispatch.
+   */
+  intervalMinutes: number | null;
+  /**
+   * Minutes from first dispatch until escalation.
+   */
+  deadlineMinutes: number;
+}
+/**
+ * No messages between start and end, local time. The window may pass midnight.
+ */
+export interface QuietHours {
+  start: LocalTime;
+  end: LocalTime;
+}
 /**
  * One shift to fill (oppdrag). Collection: shifts.
  */
@@ -157,4 +272,117 @@ export interface Shift {
   assignedSubstituteId: DocumentId | null;
   assignedAt: Instant | null;
   createdAt: Instant;
+}
+/**
+ * A permanent employee who can report absence. Collection: staff.
+ */
+export interface Staff {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  name: string;
+  role: Role;
+  phone: PhoneNumber;
+  /**
+   * Firebase Auth user, set at first login.
+   */
+  authUid: DocumentId | null;
+  classNames: ClassName[];
+  subjects: Subject[];
+  /**
+   * May use the admin web app for this school.
+   */
+  isSchoolAdmin: boolean;
+  active: boolean;
+}
+/**
+ * A substitute in the register (plan 6.2). Collection: substitutes. Computed history for matching is added in step 3.
+ */
+export interface Substitute {
+  tenantId: DocumentId;
+  /**
+   * Schools the substitute works for.
+   *
+   * @minItems 1
+   */
+  schoolIds: DocumentId[];
+  name: string;
+  phone: PhoneNumber;
+  email: string | null;
+  /**
+   * Firebase Auth user, set at first login. Null for substitutes without the app.
+   */
+  authUid: DocumentId | null;
+  status: SubstituteStatus;
+  /**
+   * @minItems 1
+   */
+  roles: Role[];
+  qualifications: Qualifications;
+  preferences: SubstitutePreferences;
+  /**
+   * Classes this substitute must not be asked for. Internal, visible to the substitute on access request (plan 6.2).
+   */
+  classBlocks: ClassBlock[];
+}
+export interface Qualifications {
+  teacherEducation: boolean;
+  /**
+   * Trade certificates, for example barne_og_ungdomsarbeider.
+   */
+  certificates: string[];
+  teachingSubjects: TeachingSubject[];
+  /**
+   * Null means no valid certificate registered. Hard filter (rule 10).
+   */
+  policeCertificate: PoliceCertificate | null;
+}
+export interface TeachingSubject {
+  subject: Subject;
+  /**
+   * @minItems 1
+   */
+  grades: Grade[];
+  /**
+   * Competence level 1 to 3.
+   */
+  level: number;
+}
+export interface PoliceCertificate {
+  issuedOn: LocalDate;
+  expiresOn: LocalDate;
+}
+export interface SubstitutePreferences {
+  weekdays: Weekday[];
+  earliestStart: LocalTime;
+  latestEnd: LocalTime;
+  maxDaysPerWeek: number;
+  preferredGrades: Grade[];
+  notificationChannel: "push" | "sms" | "both";
+}
+export interface ClassBlock {
+  schoolId: DocumentId;
+  className: ClassName;
+  reason: string;
+  since: LocalDate;
+}
+/**
+ * One recurring lesson or duty for one staff member. Collection: timetable.
+ */
+export interface TimetableEntry {
+  tenantId: DocumentId;
+  schoolId: DocumentId;
+  staffId: DocumentId;
+  role: Role;
+  className: ClassName | null;
+  subject: Subject | null;
+  grade: Grade | null;
+  weekday: Weekday;
+  startTime: LocalTime;
+  endTime: LocalTime;
+  room: string | null;
+  validFrom: LocalDate;
+  /**
+   * Null means until further notice.
+   */
+  validTo: LocalDate | null;
 }

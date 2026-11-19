@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/absence.schema.json",
+  "title": "Absence",
+  "description": "A reported absence or a need created by an admin. Collection: absences. No reason category is stored (data minimisation). The comment is never part of outgoing messages (rule 11).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "staffId", "startsAt", "endsAt", "comment",
+    "source", "status", "reportedAt", "reportedBy"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "staffId": {
+      "description": "Null for needs without a person, for example a vacant position.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "startsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "endsAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "comment": {
+      "anyOf": [{ "type": "string", "minLength": 1, "maxLength": 500 }, { "type": "null" }]
+    },
+    "source": {
+      "description": "staff: reported in the mobile app. admin: created in the admin web app.",
+      "type": "string",
+      "enum": ["staff", "admin"]
+    },
+    "status": {
+      "description": "withdrawn when the staff member reports back healthy.",
+      "type": "string",
+      "enum": ["active", "withdrawn"]
+    },
+    "reportedAt": { "$ref": "common.schema.json#/$defs/Instant" },
+    "reportedBy": { "$ref": "common.schema.json#/$defs/DocumentId" }
+  }
+}

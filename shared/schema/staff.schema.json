@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/staff.schema.json",
+  "title": "Staff",
+  "description": "A permanent employee who can report absence. Collection: staff.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolId", "name", "role", "phone", "authUid", "classNames",
+    "subjects", "isSchoolAdmin", "active"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "role": { "$ref": "common.schema.json#/$defs/Role" },
+    "phone": { "$ref": "common.schema.json#/$defs/PhoneNumber" },
+    "authUid": {
+      "description": "Firebase Auth user, set at first login.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "classNames": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/ClassName" },
+      "uniqueItems": true
+    },
+    "subjects": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/Subject" },
+      "uniqueItems": true
+    },
+    "isSchoolAdmin": {
+      "description": "May use the admin web app for this school.",
+      "type": "boolean"
+    },
+    "active": { "type": "boolean" }
+  }
+}

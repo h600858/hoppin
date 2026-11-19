@@ -1,0 +1,108 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-ingrid",
+      "role": "laerer",
+      "className": "5B",
+      "subject": "matematikk",
+      "grade": 5,
+      "weekday": 4,
+      "startTime": "08:30",
+      "endTime": "10:00",
+      "room": "Rom 204",
+      "validFrom": "2026-08-17",
+      "validTo": null
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "staffId": "staff-arne",
+      "role": "sfo",
+      "className": null,
+      "subject": null,
+      "grade": null,
+      "weekday": 1,
+      "startTime": "13:00",
+      "endTime": "16:30",
+      "room": null,
+      "validFrom": "2026-08-17",
+      "validTo": "2027-06-19"
+    }
+  ],
+  "invalid": [
+    {
+      "why": "time must be zero padded HH:mm",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "role": "laerer",
+        "className": "5B",
+        "subject": "matematikk",
+        "grade": 5,
+        "weekday": 4,
+        "startTime": "8:30",
+        "endTime": "10:00",
+        "room": "Rom 204",
+        "validFrom": "2026-08-17",
+        "validTo": null
+      }
+    },
+    {
+      "why": "weekday 0 does not exist, Monday is 1",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "role": "laerer",
+        "className": "5B",
+        "subject": "matematikk",
+        "grade": 5,
+        "weekday": 0,
+        "startTime": "08:30",
+        "endTime": "10:00",
+        "room": "Rom 204",
+        "validFrom": "2026-08-17",
+        "validTo": null
+      }
+    },
+    {
+      "why": "weekday 8 does not exist",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "role": "laerer",
+        "className": "5B",
+        "subject": "matematikk",
+        "grade": 5,
+        "weekday": 8,
+        "startTime": "08:30",
+        "endTime": "10:00",
+        "room": "Rom 204",
+        "validFrom": "2026-08-17",
+        "validTo": null
+      }
+    },
+    {
+      "why": "start time is a local time, not an instant",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "staffId": "staff-ingrid",
+        "role": "laerer",
+        "className": "5B",
+        "subject": "matematikk",
+        "grade": 5,
+        "weekday": 4,
+        "startTime": "2026-11-19T07:30:00.000Z",
+        "endTime": "10:00",
+        "room": "Rom 204",
+        "validFrom": "2026-08-17",
+        "validTo": null
+      }
+    }
+  ]
+}

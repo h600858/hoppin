@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/substitute.schema.json",
+  "title": "Substitute",
+  "description": "A substitute in the register (plan 6.2). Collection: substitutes. Computed history for matching is added in step 3.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "schoolIds", "name", "phone", "email", "authUid", "status",
+    "roles", "qualifications", "preferences", "classBlocks"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "schoolIds": {
+      "description": "Schools the substitute works for.",
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/DocumentId" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "phone": { "$ref": "common.schema.json#/$defs/PhoneNumber" },
+    "email": {
+      "anyOf": [{ "type": "string", "format": "email" }, { "type": "null" }]
+    },
+    "authUid": {
+      "description": "Firebase Auth user, set at first login. Null for substitutes without the app.",
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/DocumentId" }, { "type": "null" }]
+    },
+    "status": { "$ref": "common.schema.json#/$defs/SubstituteStatus" },
+    "roles": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/Role" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "qualifications": {
+      "title": "Qualifications",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["teacherEducation", "certificates", "teachingSubjects", "policeCertificate"],
+      "properties": {
+        "teacherEducation": { "type": "boolean" },
+        "certificates": {
+          "description": "Trade certificates, for example barne_og_ungdomsarbeider.",
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "uniqueItems": true
+        },
+        "teachingSubjects": {
+          "type": "array",
+          "items": {
+            "title": "TeachingSubject",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["subject", "grades", "level"],
+            "properties": {
+              "subject": { "$ref": "common.schema.json#/$defs/Subject" },
+              "grades": {
+                "type": "array",
+                "items": { "$ref": "common.schema.json#/$defs/Grade" },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "level": {
+                "description": "Competence level 1 to 3.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3
+              }
+            }
+          }
+        },
+        "policeCertificate": {
+          "description": "Null means no valid certificate registered. Hard filter (rule 10).",
+          "anyOf": [
+            {
+              "title": "PoliceCertificate",
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["issuedOn", "expiresOn"],
+              "properties": {
+                "issuedOn": { "$ref": "common.schema.json#/$defs/LocalDate" },
+                "expiresOn": { "$ref": "common.schema.json#/$defs/LocalDate" }
+              }
+            },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "preferences": {
+      "title": "SubstitutePreferences",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weekdays", "earliestStart", "latestEnd", "maxDaysPerWeek",
+        "preferredGrades", "notificationChannel"
+      ],
+      "properties": {
+        "weekdays": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/Weekday" },
+          "uniqueItems": true
+        },
+        "earliestStart": { "$ref": "common.schema.json#/$defs/LocalTime" },
+        "latestEnd": { "$ref": "common.schema.json#/$defs/LocalTime" },
+        "maxDaysPerWeek": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "preferredGrades": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/Grade" },
+          "uniqueItems": true
+        },
+        "notificationChannel": { "type": "string", "enum": ["push", "sms", "both"] }
+      }
+    },
+    "classBlocks": {
+      "description": "Classes this substitute must not be asked for. Internal, visible to the substitute on access request (plan 6.2).",
+      "type": "array",
+      "items": {
+        "title": "ClassBlock",
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["schoolId", "className", "reason", "since"],
+        "properties": {
+          "schoolId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+          "className": { "$ref": "common.schema.json#/$defs/ClassName" },
+          "reason": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "since": { "$ref": "common.schema.json#/$defs/LocalDate" }
+        }
+      }
+    }
+  }
+}

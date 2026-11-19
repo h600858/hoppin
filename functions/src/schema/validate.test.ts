@@ -10,7 +10,16 @@ interface ModelFixture {
   invalid: { why: string; doc: unknown }[];
 }
 
-const models: SchemaName[] = ["shift", "offer"];
+const models: SchemaName[] = [
+  "school",
+  "schoolConfig",
+  "staff",
+  "substitute",
+  "timetableEntry",
+  "absence",
+  "shift",
+  "offer",
+];
 
 describe.each(models)("%s schema", (name) => {
   const fixture = readFixture(`models/${name}.json`) as ModelFixture;

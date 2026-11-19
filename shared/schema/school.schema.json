@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.innhopp.no/school.schema.json",
+  "title": "School",
+  "description": "A school. Collection: schools. Configuration lives in schoolConfigs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tenantId", "name", "timeZone", "grades", "escalationStaffIds",
+    "sharesSubstitutePool", "active"
+  ],
+  "properties": {
+    "tenantId": { "$ref": "common.schema.json#/$defs/DocumentId" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "timeZone": {
+      "description": "Local times in timetable and config are read in this zone.",
+      "type": "string",
+      "enum": ["Europe/Oslo"]
+    },
+    "grades": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/Grade" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "escalationStaffIds": {
+      "description": "Staff who receive escalations, in order.",
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/DocumentId" },
+      "uniqueItems": true
+    },
+    "sharesSubstitutePool": {
+      "description": "Whether substitutes from other schools in the tenant may be asked (plan 7.5).",
+      "type": "boolean"
+    },
+    "active": { "type": "boolean" }
+  }
+}

@@ -12,21 +12,29 @@ const schemas = files.map((f) => JSON.parse(readFileSync(join(schemaDir, f), "ut
 const common = schemas.find((s) => s.title === "CommonDefinitions");
 const models = schemas.filter((s) => s !== common);
 
-const options = {
+// One root schema that points at every common definition and every model.
+// Compiling it in one go gives each named type (title) exactly once.
+const root = {
+  $id: "https://schema.innhopp.no/all.schema.json",
+  title: "AllSchemas",
+  type: "object",
+  additionalProperties: false,
+  properties: Object.fromEntries([
+    ...Object.keys(common.$defs).map((name) => [name, { $ref: `common.schema.json#/$defs/${name}` }]),
+    ...models.map((schema) => [schema.title, { $ref: new URL(schema.$id).pathname.slice(1) }]),
+  ]),
+};
+
+const types = await compile(root, root.title, {
   bannerComment: "",
   cwd: schemaDir,
   additionalProperties: false,
   ignoreMinAndMaxItems: true,
   $refOptions: { resolve: { http: false } },
-};
-
-const parts = [await compile(common, common.title, { ...options, unreachableDefinitions: true })];
-for (const schema of models) {
-  parts.push(await compile(schema, schema.title, { ...options, declareExternallyReferenced: false }));
-}
+});
 
 mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, "types.ts"), banner + "\n" + parts.join("\n"));
+writeFileSync(join(outDir, "types.ts"), banner + "\n" + types);
 writeFileSync(
   join(outDir, "schemas.ts"),
   banner + "\nexport const schemas = " + JSON.stringify(schemas, null, 2) + " as const;\n",

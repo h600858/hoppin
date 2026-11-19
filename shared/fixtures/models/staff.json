@@ -1,0 +1,128 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "name": "Ingrid Lærer",
+      "role": "laerer",
+      "phone": "+4791234567",
+      "authUid": null,
+      "classNames": [
+        "5B"
+      ],
+      "subjects": [
+        "matematikk",
+        "norsk"
+      ],
+      "isSchoolAdmin": false,
+      "active": true
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "name": "Rita Rektor",
+      "role": "laerer",
+      "phone": "+4791234567",
+      "authUid": "uid-rita",
+      "classNames": [],
+      "subjects": [],
+      "isSchoolAdmin": true,
+      "active": true
+    },
+    {
+      "tenantId": "bergen",
+      "schoolId": "bjorkelia",
+      "name": "Arne Assistent",
+      "role": "assistent",
+      "phone": "+4791234567",
+      "authUid": null,
+      "classNames": [
+        "2A",
+        "2B"
+      ],
+      "subjects": [],
+      "isSchoolAdmin": false,
+      "active": true
+    }
+  ],
+  "invalid": [
+    {
+      "why": "rektor is not a role, admin rights come from isSchoolAdmin",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "name": "Ingrid Lærer",
+        "role": "rektor",
+        "phone": "+4791234567",
+        "authUid": null,
+        "classNames": [
+          "5B"
+        ],
+        "subjects": [
+          "matematikk",
+          "norsk"
+        ],
+        "isSchoolAdmin": false,
+        "active": true
+      }
+    },
+    {
+      "why": "phone must be E.164 with country code",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "name": "Ingrid Lærer",
+        "role": "laerer",
+        "phone": "91234567",
+        "authUid": null,
+        "classNames": [
+          "5B"
+        ],
+        "subjects": [
+          "matematikk",
+          "norsk"
+        ],
+        "isSchoolAdmin": false,
+        "active": true
+      }
+    },
+    {
+      "why": "unknown subject",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "name": "Ingrid Lærer",
+        "role": "laerer",
+        "phone": "+4791234567",
+        "authUid": null,
+        "classNames": [
+          "5B"
+        ],
+        "subjects": [
+          "matte"
+        ],
+        "isSchoolAdmin": false,
+        "active": true
+      }
+    },
+    {
+      "why": "missing required field active",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolId": "bjorkelia",
+        "name": "Ingrid Lærer",
+        "role": "laerer",
+        "phone": "+4791234567",
+        "authUid": null,
+        "classNames": [
+          "5B"
+        ],
+        "subjects": [
+          "matematikk",
+          "norsk"
+        ],
+        "isSchoolAdmin": false
+      }
+    }
+  ]
+}

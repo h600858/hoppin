@@ -1,10 +1,25 @@
 import Ajv2020, { type ErrorObject } from "ajv/dist/2020";
 import addFormats from "ajv-formats";
 import { schemas } from "../generated/schemas";
-import type { Offer, Shift } from "../generated/types";
+import type {
+  Absence,
+  Offer,
+  School,
+  SchoolConfig,
+  Shift,
+  Staff,
+  Substitute,
+  TimetableEntry,
+} from "../generated/types";
 
 /** Maps each collection schema to its generated TypeScript type. */
 export interface SchemaTypes {
+  school: School;
+  schoolConfig: SchoolConfig;
+  staff: Staff;
+  substitute: Substitute;
+  timetableEntry: TimetableEntry;
+  absence: Absence;
   shift: Shift;
   offer: Offer;
 }

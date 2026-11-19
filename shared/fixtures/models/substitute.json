@@ -1,0 +1,548 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Kari Nes",
+      "phone": "+4798765432",
+      "email": "kari@example.no",
+      "authUid": "uid-kari",
+      "status": "active",
+      "roles": [
+        "laerer",
+        "sfo"
+      ],
+      "qualifications": {
+        "teacherEducation": true,
+        "certificates": [],
+        "teachingSubjects": [
+          {
+            "subject": "matematikk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 3
+          },
+          {
+            "subject": "norsk",
+            "grades": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "level": 2
+          }
+        ],
+        "policeCertificate": {
+          "issuedOn": "2024-06-14",
+          "expiresOn": "2029-06-14"
+        }
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          4
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:30",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "push"
+      },
+      "classBlocks": []
+    },
+    {
+      "tenantId": "bergen",
+      "schoolIds": [
+        "bjorkelia"
+      ],
+      "name": "Per Hansen",
+      "phone": "+4741122334",
+      "email": null,
+      "authUid": null,
+      "status": "paused",
+      "roles": [
+        "assistent"
+      ],
+      "qualifications": {
+        "teacherEducation": false,
+        "certificates": [
+          "barne_og_ungdomsarbeider"
+        ],
+        "teachingSubjects": [],
+        "policeCertificate": null
+      },
+      "preferences": {
+        "weekdays": [
+          1,
+          2,
+          4
+        ],
+        "earliestStart": "08:00",
+        "latestEnd": "15:30",
+        "maxDaysPerWeek": 3,
+        "preferredGrades": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "notificationChannel": "sms"
+      },
+      "classBlocks": [
+        {
+          "schoolId": "bjorkelia",
+          "className": "7A",
+          "reason": "Avtalt med foresatte",
+          "since": "2026-09-01"
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "why": "status values are English (active), not Norwegian",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolIds": [
+          "bjorkelia"
+        ],
+        "name": "Kari Nes",
+        "phone": "+4798765432",
+        "email": "kari@example.no",
+        "authUid": "uid-kari",
+        "status": "aktiv",
+        "roles": [
+          "laerer",
+          "sfo"
+        ],
+        "qualifications": {
+          "teacherEducation": true,
+          "certificates": [],
+          "teachingSubjects": [
+            {
+              "subject": "matematikk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 3
+            },
+            {
+              "subject": "norsk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 2
+            }
+          ],
+          "policeCertificate": {
+            "issuedOn": "2024-06-14",
+            "expiresOn": "2029-06-14"
+          }
+        },
+        "preferences": {
+          "weekdays": [
+            1,
+            2,
+            4
+          ],
+          "earliestStart": "08:00",
+          "latestEnd": "15:30",
+          "maxDaysPerWeek": 3,
+          "preferredGrades": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "notificationChannel": "push"
+        },
+        "classBlocks": []
+      }
+    },
+    {
+      "why": "a substitute needs at least one role",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolIds": [
+          "bjorkelia"
+        ],
+        "name": "Kari Nes",
+        "phone": "+4798765432",
+        "email": "kari@example.no",
+        "authUid": "uid-kari",
+        "status": "active",
+        "roles": [],
+        "qualifications": {
+          "teacherEducation": true,
+          "certificates": [],
+          "teachingSubjects": [
+            {
+              "subject": "matematikk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 3
+            },
+            {
+              "subject": "norsk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 2
+            }
+          ],
+          "policeCertificate": {
+            "issuedOn": "2024-06-14",
+            "expiresOn": "2029-06-14"
+          }
+        },
+        "preferences": {
+          "weekdays": [
+            1,
+            2,
+            4
+          ],
+          "earliestStart": "08:00",
+          "latestEnd": "15:30",
+          "maxDaysPerWeek": 3,
+          "preferredGrades": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "notificationChannel": "push"
+        },
+        "classBlocks": []
+      }
+    },
+    {
+      "why": "a substitute belongs to at least one school",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolIds": [],
+        "name": "Kari Nes",
+        "phone": "+4798765432",
+        "email": "kari@example.no",
+        "authUid": "uid-kari",
+        "status": "active",
+        "roles": [
+          "laerer",
+          "sfo"
+        ],
+        "qualifications": {
+          "teacherEducation": true,
+          "certificates": [],
+          "teachingSubjects": [
+            {
+              "subject": "matematikk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 3
+            },
+            {
+              "subject": "norsk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 2
+            }
+          ],
+          "policeCertificate": {
+            "issuedOn": "2024-06-14",
+            "expiresOn": "2029-06-14"
+          }
+        },
+        "preferences": {
+          "weekdays": [
+            1,
+            2,
+            4
+          ],
+          "earliestStart": "08:00",
+          "latestEnd": "15:30",
+          "maxDaysPerWeek": 3,
+          "preferredGrades": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "notificationChannel": "push"
+        },
+        "classBlocks": []
+      }
+    },
+    {
+      "why": "competence level is 1 to 3",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolIds": [
+          "bjorkelia"
+        ],
+        "name": "Kari Nes",
+        "phone": "+4798765432",
+        "email": "kari@example.no",
+        "authUid": "uid-kari",
+        "status": "active",
+        "roles": [
+          "laerer",
+          "sfo"
+        ],
+        "qualifications": {
+          "teacherEducation": true,
+          "certificates": [],
+          "teachingSubjects": [
+            {
+              "subject": "matematikk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 4
+            },
+            {
+              "subject": "norsk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 2
+            }
+          ],
+          "policeCertificate": {
+            "issuedOn": "2024-06-14",
+            "expiresOn": "2029-06-14"
+          }
+        },
+        "preferences": {
+          "weekdays": [
+            1,
+            2,
+            4
+          ],
+          "earliestStart": "08:00",
+          "latestEnd": "15:30",
+          "maxDaysPerWeek": 3,
+          "preferredGrades": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "notificationChannel": "push"
+        },
+        "classBlocks": []
+      }
+    },
+    {
+      "why": "police certificate needs both dates",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolIds": [
+          "bjorkelia"
+        ],
+        "name": "Kari Nes",
+        "phone": "+4798765432",
+        "email": "kari@example.no",
+        "authUid": "uid-kari",
+        "status": "active",
+        "roles": [
+          "laerer",
+          "sfo"
+        ],
+        "qualifications": {
+          "teacherEducation": true,
+          "certificates": [],
+          "teachingSubjects": [
+            {
+              "subject": "matematikk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 3
+            },
+            {
+              "subject": "norsk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 2
+            }
+          ],
+          "policeCertificate": {
+            "expiresOn": "2029-06-14"
+          }
+        },
+        "preferences": {
+          "weekdays": [
+            1,
+            2,
+            4
+          ],
+          "earliestStart": "08:00",
+          "latestEnd": "15:30",
+          "maxDaysPerWeek": 3,
+          "preferredGrades": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "notificationChannel": "push"
+        },
+        "classBlocks": []
+      }
+    },
+    {
+      "why": "at most five days per week",
+      "doc": {
+        "tenantId": "bergen",
+        "schoolIds": [
+          "bjorkelia"
+        ],
+        "name": "Kari Nes",
+        "phone": "+4798765432",
+        "email": "kari@example.no",
+        "authUid": "uid-kari",
+        "status": "active",
+        "roles": [
+          "laerer",
+          "sfo"
+        ],
+        "qualifications": {
+          "teacherEducation": true,
+          "certificates": [],
+          "teachingSubjects": [
+            {
+              "subject": "matematikk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 3
+            },
+            {
+              "subject": "norsk",
+              "grades": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "level": 2
+            }
+          ],
+          "policeCertificate": {
+            "issuedOn": "2024-06-14",
+            "expiresOn": "2029-06-14"
+          }
+        },
+        "preferences": {
+          "weekdays": [
+            1,
+            2,
+            4
+          ],
+          "earliestStart": "08:00",
+          "latestEnd": "15:30",
+          "maxDaysPerWeek": 6,
+          "preferredGrades": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "notificationChannel": "push"
+        },
+        "classBlocks": []
+      }
+    }
+  ]
+}

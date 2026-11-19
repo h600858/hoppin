@@ -50,6 +50,12 @@
       "minLength": 1,
       "maxLength": 16
     },
+    "PhoneNumber": {
+      "title": "PhoneNumber",
+      "description": "E.164, for example +4791234567.",
+      "type": "string",
+      "pattern": "^\\+[1-9][0-9]{7,14}$"
+    },
     "Role": {
       "title": "Role",
       "type": "string",
@@ -79,6 +85,11 @@
         "queued", "sent", "accepted", "declined", "expired",
         "superseded", "withdrawn", "undone"
       ]
+    },
+    "SubstituteStatus": {
+      "title": "SubstituteStatus",
+      "type": "string",
+      "enum": ["active", "paused", "left"]
     },
     "Channel": {
       "title": "Channel",
