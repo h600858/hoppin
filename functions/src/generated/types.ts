@@ -71,7 +71,8 @@ export type HardFilterName =
   | "class_block"
   | "working_time_limit"
   | "formal_competence"
-  | "already_asked";
+  | "already_asked"
+  | "open_offer";
 export type EscalationResolution =
   "manual_assignment" | "internal_staff" | "merged_groups" | "other_internal" | "withdrawn";
 
@@ -110,6 +111,7 @@ export interface AllSchemas {
   ShiftEvent?: ShiftEvent;
   Staff?: Staff;
   Substitute?: Substitute;
+  SubstituteStats?: SubstituteStats;
   Tenant?: Tenant;
   TimetableEntry?: TimetableEntry;
 }
@@ -405,6 +407,21 @@ export interface HardFilters {
    * Subjects where only formally qualified substitutes may be asked.
    */
   formalCompetenceSubjects: Subject[];
+  formalCompetence: FormalCompetenceRule;
+  /**
+   * A substitute with this many unanswered offers gets no new ones, except for urgent and critical shifts (plan 7.4).
+   */
+  maxOpenOffersPerSubstitute: number;
+}
+/**
+ * Who counts as formally qualified in a subject. Temporary until the school's rules are known (open-questions 2).
+ */
+export interface FormalCompetenceRule {
+  requireTeacherEducation: boolean;
+  /**
+   * Lowest competence level in the subject, 1 to 3.
+   */
+  minLevel: number;
 }
 /**
  * Wave rules per urgency, chosen by time until the shift starts (plan 7.5).
@@ -582,6 +599,51 @@ export interface ClassBlock {
   className: ClassName;
   reason: string;
   since: LocalDate;
+}
+/**
+ * History computed by the system for the score function (plan 7.3 and 7.8). Collection: substituteStats, document ID is the substitute ID. Kept apart from substitutes so the profile the substitute edits never mixes with computed data. A substitute without a document is new and gets neutral priors.
+ */
+export interface SubstituteStats {
+  tenantId: DocumentId;
+  substituteId: DocumentId;
+  computedAt: Instant;
+  offersTotal: number;
+  offersAccepted: number;
+  /**
+   * Offers per weekday, Monday first.
+   *
+   * @minItems 7
+   * @maxItems 7
+   */
+  offeredByWeekday: number[];
+  /**
+   * Accepted offers per weekday, Monday first.
+   *
+   * @minItems 7
+   * @maxItems 7
+   */
+  acceptedByWeekday: number[];
+  assignmentsTotal: number;
+  assignmentsLast30Days: number;
+  /**
+   * Share of assignments attended. Null until there is data.
+   */
+  attendanceRate: number | null;
+  lateCancellationRate: number | null;
+  /**
+   * Average feedback from schools, 0 to 5. Personal data, visible on access request.
+   */
+  schoolRating: number | null;
+  /**
+   * Dates of earlier assignments per class, for class familiarity with time decay.
+   */
+  classVisits: ClassVisits[];
+  lastOfferedAt: Instant | null;
+}
+export interface ClassVisits {
+  schoolId: DocumentId;
+  className: ClassName;
+  dates: LocalDate[];
 }
 /**
  * A municipality or private school owner (plan 10.1: the data controller). Collection: tenants. No real personal data may be stored before dataProcessingAgreementSignedOn is set.

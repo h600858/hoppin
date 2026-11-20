@@ -18,6 +18,7 @@ import type {
   ShiftEvent,
   Staff,
   Substitute,
+  SubstituteStats,
   Tenant,
   TimetableEntry,
   UndoClaimRequest,
@@ -33,6 +34,7 @@ export interface SchemaTypes {
   schoolConfig: SchoolConfig;
   staff: Staff;
   substitute: Substitute;
+  substituteStats: SubstituteStats;
   timetableEntry: TimetableEntry;
   absence: Absence;
   shift: Shift;

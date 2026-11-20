@@ -637,7 +637,8 @@ export const schemas = [
                     "class_block",
                     "working_time_limit",
                     "formal_competence",
-                    "already_asked"
+                    "already_asked",
+                    "open_offer"
                   ]
                 },
                 {
@@ -1100,7 +1101,9 @@ export const schemas = [
           "classBlocks",
           "workingTimeLimits",
           "alreadyAsked",
-          "formalCompetenceSubjects"
+          "formalCompetenceSubjects",
+          "formalCompetence",
+          "maxOpenOffersPerSubstitute"
         ],
         "properties": {
           "roleMatch": {
@@ -1125,6 +1128,32 @@ export const schemas = [
               "$ref": "common.schema.json#/$defs/Subject"
             },
             "uniqueItems": true
+          },
+          "formalCompetence": {
+            "title": "FormalCompetenceRule",
+            "description": "Who counts as formally qualified in a subject. Temporary until the school's rules are known (open-questions 2).",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "requireTeacherEducation",
+              "minLevel"
+            ],
+            "properties": {
+              "requireTeacherEducation": {
+                "type": "boolean"
+              },
+              "minLevel": {
+                "description": "Lowest competence level in the subject, 1 to 3.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3
+              }
+            }
+          },
+          "maxOpenOffersPerSubstitute": {
+            "description": "A substitute with this many unanswered offers gets no new ones, except for urgent and critical shifts (plan 7.4).",
+            "type": "integer",
+            "minimum": 1
           }
         }
       },
@@ -1748,6 +1777,153 @@ export const schemas = [
             }
           }
         }
+      }
+    }
+  },
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.innhopp.no/substituteStats.schema.json",
+    "title": "SubstituteStats",
+    "description": "History computed by the system for the score function (plan 7.3 and 7.8). Collection: substituteStats, document ID is the substitute ID. Kept apart from substitutes so the profile the substitute edits never mixes with computed data. A substitute without a document is new and gets neutral priors.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tenantId",
+      "substituteId",
+      "computedAt",
+      "offersTotal",
+      "offersAccepted",
+      "offeredByWeekday",
+      "acceptedByWeekday",
+      "assignmentsTotal",
+      "assignmentsLast30Days",
+      "attendanceRate",
+      "lateCancellationRate",
+      "schoolRating",
+      "classVisits",
+      "lastOfferedAt"
+    ],
+    "properties": {
+      "tenantId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "substituteId": {
+        "$ref": "common.schema.json#/$defs/DocumentId"
+      },
+      "computedAt": {
+        "$ref": "common.schema.json#/$defs/Instant"
+      },
+      "offersTotal": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "offersAccepted": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "offeredByWeekday": {
+        "description": "Offers per weekday, Monday first.",
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minItems": 7,
+        "maxItems": 7
+      },
+      "acceptedByWeekday": {
+        "description": "Accepted offers per weekday, Monday first.",
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minItems": 7,
+        "maxItems": 7
+      },
+      "assignmentsTotal": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "assignmentsLast30Days": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "attendanceRate": {
+        "description": "Share of assignments attended. Null until there is data.",
+        "anyOf": [
+          {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "lateCancellationRate": {
+        "anyOf": [
+          {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "schoolRating": {
+        "description": "Average feedback from schools, 0 to 5. Personal data, visible on access request.",
+        "anyOf": [
+          {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "classVisits": {
+        "description": "Dates of earlier assignments per class, for class familiarity with time decay.",
+        "type": "array",
+        "items": {
+          "title": "ClassVisits",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schoolId",
+            "className",
+            "dates"
+          ],
+          "properties": {
+            "schoolId": {
+              "$ref": "common.schema.json#/$defs/DocumentId"
+            },
+            "className": {
+              "$ref": "common.schema.json#/$defs/ClassName"
+            },
+            "dates": {
+              "type": "array",
+              "items": {
+                "$ref": "common.schema.json#/$defs/LocalDate"
+              }
+            }
+          }
+        }
+      },
+      "lastOfferedAt": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/Instant"
+          },
+          {
+            "type": "null"
+          }
+        ]
       }
     }
   },

@@ -47,6 +47,13 @@
           "score": null,
           "components": null,
           "selected": false
+        },
+        {
+          "substituteId": "sub-lise",
+          "excludedBy": "open_offer",
+          "score": null,
+          "components": null,
+          "selected": false
         }
       ]
     },

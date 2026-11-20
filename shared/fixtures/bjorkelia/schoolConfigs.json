@@ -23,7 +23,12 @@
         "classBlocks": true,
         "workingTimeLimits": true,
         "alreadyAsked": true,
-        "formalCompetenceSubjects": []
+        "formalCompetenceSubjects": [],
+        "formalCompetence": {
+          "requireTeacherEducation": true,
+          "minLevel": 3
+        },
+        "maxOpenOffersPerSubstitute": 1
       },
       "waves": {
         "calm": {

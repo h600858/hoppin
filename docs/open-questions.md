@@ -9,7 +9,9 @@ og datoen, og lag et beslutningsnotat hvis det påvirker arkitekturen.
    er åpent for alle og det ikke er noen frist (skisse 01: «Åpent for alle · ingen
    frist»). Den finnes ikke i planen. Er det en egen oppdragstype, en egen status i
    statusmaskinen, eller et flagg på oppdraget? Påvirker matching og eskalering.
-2. **Faktiske harde filtre, kompetansekrav og vekter.** Standardverdiene i CLAUDE.md er
+2. **Faktiske harde filtre, kompetansekrav og vekter.** Midlertidig regel for formell
+   kompetanse (lærerutdanning og nivå 3 i faget på trinnet) ligger i
+   `schoolConfigs.filters.formalCompetence`, se decisions/0008. Standardverdiene i CLAUDE.md er
    midlertidige. Plan vedlegg A (møte 2 og 3) er intervjuguiden.
 3. **Importformat for timeplan og vikarliste.** Hva kan skolen eksportere, og i hvilket
    format (CSV, Excel, Visma)?
@@ -26,9 +28,7 @@ og datoen, og lag et beslutningsnotat hvis det påvirker arkitekturen.
 
 ## Domene og algoritme
 
-7. **Kritisk hastegrad mot regel 3.** «Alle kvalifiserte i én utsending» kolliderer med
-   «høyst én forespørsel per kandidat per bølge» når flere kritiske oppdrag trenger de
-   samme folkene. Hvilken regel vinner?
+7. ~~**Kritisk hastegrad mot regel 3.**~~ Besvart 2026-11-20, se decisions/0008.
 8. ~~**Statuser på tilbud (offers).**~~ Besvart 2026-11-18, se decisions/0007.
 
 10. **Når en bekreftet vikar trekker seg.** Kontrakten sier `claimed -> cancelled`,

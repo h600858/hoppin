@@ -146,6 +146,8 @@ class HardFilters {
     required this.workingTimeLimits,
     required this.alreadyAsked,
     required this.formalCompetenceSubjects,
+    required this.formalCompetence,
+    required this.maxOpenOffersPerSubstitute,
   });
 
   static HardFilters _read(FieldReader r) => HardFilters(
@@ -159,6 +161,11 @@ class HardFilters {
       readSubject,
       unique: true,
     ),
+    formalCompetence: r.object('formalCompetence', FormalCompetenceRule._read),
+    maxOpenOffersPerSubstitute: r.integer(
+      'maxOpenOffersPerSubstitute',
+      min: 1,
+    ),
   );
 
   final bool roleMatch;
@@ -170,6 +177,13 @@ class HardFilters {
   /// Subjects where only formally qualified substitutes may be asked.
   final List<Subject> formalCompetenceSubjects;
 
+  /// Who counts as formally qualified in a subject.
+  final FormalCompetenceRule formalCompetence;
+
+  /// A substitute with this many unanswered offers gets no new ones, except
+  /// for urgent and critical shifts.
+  final int maxOpenOffersPerSubstitute;
+
   Map<String, Object?> toMap() => {
     'roleMatch': roleMatch,
     'timeCollision': timeCollision,
@@ -179,6 +193,32 @@ class HardFilters {
     'formalCompetenceSubjects': [
       for (final subject in formalCompetenceSubjects) subject.value,
     ],
+    'formalCompetence': formalCompetence.toMap(),
+    'maxOpenOffersPerSubstitute': maxOpenOffersPerSubstitute,
+  };
+}
+
+/// Who counts as formally qualified in a subject. Temporary until the
+/// school's rules are known.
+class FormalCompetenceRule {
+  const FormalCompetenceRule({
+    required this.requireTeacherEducation,
+    required this.minLevel,
+  });
+
+  static FormalCompetenceRule _read(FieldReader r) => FormalCompetenceRule(
+    requireTeacherEducation: r.boolean('requireTeacherEducation'),
+    minLevel: r.integer('minLevel', min: 1, max: 3),
+  );
+
+  final bool requireTeacherEducation;
+
+  /// Lowest competence level in the subject, 1 to 3.
+  final int minLevel;
+
+  Map<String, Object?> toMap() => {
+    'requireTeacherEducation': requireTeacherEducation,
+    'minLevel': minLevel,
   };
 }
 

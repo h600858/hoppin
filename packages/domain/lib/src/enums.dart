@@ -139,7 +139,8 @@ enum HardFilterName implements WireEnum {
   classBlock('class_block'),
   workingTimeLimit('working_time_limit'),
   formalCompetence('formal_competence'),
-  alreadyAsked('already_asked');
+  alreadyAsked('already_asked'),
+  openOffer('open_offer');
 
   const HardFilterName(this.value);
 

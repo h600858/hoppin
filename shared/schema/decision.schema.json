@@ -46,7 +46,7 @@
                 "enum": [
                   "police_certificate", "inactive", "role", "time_collision",
                   "class_block", "working_time_limit", "formal_competence",
-                  "already_asked"
+                  "already_asked", "open_offer"
                 ]
               },
               { "type": "null" }

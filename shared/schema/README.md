@@ -11,6 +11,7 @@ callable functions. Se decisions/0006.
 | `schoolConfig.schema.json` | SchoolConfig | schoolConfigs |
 | `staff.schema.json` | Staff | staff |
 | `substitute.schema.json` | Substitute | substitutes |
+| `substituteStats.schema.json` | SubstituteStats | substituteStats |
 | `timetableEntry.schema.json` | TimetableEntry | timetable |
 | `absence.schema.json` | Absence | absences |
 | `shift.schema.json` | Shift | shifts |

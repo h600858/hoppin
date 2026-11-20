@@ -1,0 +1,256 @@
+{
+  "valid": [
+    {
+      "tenantId": "bergen",
+      "substituteId": "sub-kari",
+      "computedAt": "2026-11-19T01:00:00.000Z",
+      "offersTotal": 40,
+      "offersAccepted": 28,
+      "offeredByWeekday": [
+        10,
+        9,
+        6,
+        8,
+        7,
+        0,
+        0
+      ],
+      "acceptedByWeekday": [
+        9,
+        8,
+        3,
+        6,
+        2,
+        0,
+        0
+      ],
+      "assignmentsTotal": 31,
+      "assignmentsLast30Days": 4,
+      "attendanceRate": 0.97,
+      "lateCancellationRate": 0.03,
+      "schoolRating": 4.6,
+      "classVisits": [
+        {
+          "schoolId": "bjorkelia",
+          "className": "5B",
+          "dates": [
+            "2026-09-03",
+            "2026-10-14",
+            "2026-11-05"
+          ]
+        }
+      ],
+      "lastOfferedAt": "2026-11-18T06:40:00.000Z"
+    },
+    {
+      "tenantId": "bergen",
+      "substituteId": "sub-ny",
+      "computedAt": "2026-11-19T01:00:00.000Z",
+      "offersTotal": 0,
+      "offersAccepted": 0,
+      "offeredByWeekday": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "acceptedByWeekday": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "assignmentsTotal": 0,
+      "assignmentsLast30Days": 0,
+      "attendanceRate": null,
+      "lateCancellationRate": null,
+      "schoolRating": null,
+      "classVisits": [],
+      "lastOfferedAt": null
+    }
+  ],
+  "invalid": [
+    {
+      "why": "weekday arrays have exactly seven entries",
+      "doc": {
+        "tenantId": "bergen",
+        "substituteId": "sub-kari",
+        "computedAt": "2026-11-19T01:00:00.000Z",
+        "offersTotal": 40,
+        "offersAccepted": 28,
+        "offeredByWeekday": [
+          10,
+          9,
+          6,
+          8,
+          7
+        ],
+        "acceptedByWeekday": [
+          9,
+          8,
+          3,
+          6,
+          2,
+          0,
+          0
+        ],
+        "assignmentsTotal": 31,
+        "assignmentsLast30Days": 4,
+        "attendanceRate": 0.97,
+        "lateCancellationRate": 0.03,
+        "schoolRating": 4.6,
+        "classVisits": [
+          {
+            "schoolId": "bjorkelia",
+            "className": "5B",
+            "dates": [
+              "2026-09-03",
+              "2026-10-14",
+              "2026-11-05"
+            ]
+          }
+        ],
+        "lastOfferedAt": "2026-11-18T06:40:00.000Z"
+      }
+    },
+    {
+      "why": "attendance rate is a share between 0 and 1",
+      "doc": {
+        "tenantId": "bergen",
+        "substituteId": "sub-kari",
+        "computedAt": "2026-11-19T01:00:00.000Z",
+        "offersTotal": 40,
+        "offersAccepted": 28,
+        "offeredByWeekday": [
+          10,
+          9,
+          6,
+          8,
+          7,
+          0,
+          0
+        ],
+        "acceptedByWeekday": [
+          9,
+          8,
+          3,
+          6,
+          2,
+          0,
+          0
+        ],
+        "assignmentsTotal": 31,
+        "assignmentsLast30Days": 4,
+        "attendanceRate": 97,
+        "lateCancellationRate": 0.03,
+        "schoolRating": 4.6,
+        "classVisits": [
+          {
+            "schoolId": "bjorkelia",
+            "className": "5B",
+            "dates": [
+              "2026-09-03",
+              "2026-10-14",
+              "2026-11-05"
+            ]
+          }
+        ],
+        "lastOfferedAt": "2026-11-18T06:40:00.000Z"
+      }
+    },
+    {
+      "why": "rating is 0 to 5",
+      "doc": {
+        "tenantId": "bergen",
+        "substituteId": "sub-kari",
+        "computedAt": "2026-11-19T01:00:00.000Z",
+        "offersTotal": 40,
+        "offersAccepted": 28,
+        "offeredByWeekday": [
+          10,
+          9,
+          6,
+          8,
+          7,
+          0,
+          0
+        ],
+        "acceptedByWeekday": [
+          9,
+          8,
+          3,
+          6,
+          2,
+          0,
+          0
+        ],
+        "assignmentsTotal": 31,
+        "assignmentsLast30Days": 4,
+        "attendanceRate": 0.97,
+        "lateCancellationRate": 0.03,
+        "schoolRating": 6,
+        "classVisits": [
+          {
+            "schoolId": "bjorkelia",
+            "className": "5B",
+            "dates": [
+              "2026-09-03",
+              "2026-10-14",
+              "2026-11-05"
+            ]
+          }
+        ],
+        "lastOfferedAt": "2026-11-18T06:40:00.000Z"
+      }
+    },
+    {
+      "why": "visit dates are dates, not instants",
+      "doc": {
+        "tenantId": "bergen",
+        "substituteId": "sub-kari",
+        "computedAt": "2026-11-19T01:00:00.000Z",
+        "offersTotal": 40,
+        "offersAccepted": 28,
+        "offeredByWeekday": [
+          10,
+          9,
+          6,
+          8,
+          7,
+          0,
+          0
+        ],
+        "acceptedByWeekday": [
+          9,
+          8,
+          3,
+          6,
+          2,
+          0,
+          0
+        ],
+        "assignmentsTotal": 31,
+        "assignmentsLast30Days": 4,
+        "attendanceRate": 0.97,
+        "lateCancellationRate": 0.03,
+        "schoolRating": 4.6,
+        "classVisits": [
+          {
+            "schoolId": "bjorkelia",
+            "className": "5B",
+            "dates": [
+              "2026-09-03T07:30:00.000Z"
+            ]
+          }
+        ],
+        "lastOfferedAt": "2026-11-18T06:40:00.000Z"
+      }
+    }
+  ]
+}

@@ -22,6 +22,7 @@ const models: SchemaName[] = [
   "schoolConfig",
   "staff",
   "substitute",
+  "substituteStats",
   "timetableEntry",
   "absence",
   "shift",
