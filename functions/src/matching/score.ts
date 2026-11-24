@@ -55,7 +55,27 @@ function daysBetween(from: string, to: string): number {
  * RELATED_SUBJECTS): 0.4. Otherwise 0.1.
  */
 export function subjectMatch(substitute: Substitute, shift: Shift): number {
-  throw new Error("TODO");
+  const subject = shift.subject;
+  if (subject === null) {
+    return 0.5;
+  }
+
+  const teaching = substitute.qualifications.teachingSubjects;
+  const sameSubject = teaching.filter((t) => t.subject === subject);
+
+  // A shift without a grade (rare) counts every grade as a match.
+  if (sameSubject.some((t) => shift.grade === null || t.grades.includes(shift.grade))) {
+    return 1;
+  }
+  if (sameSubject.length > 0) {
+    return 0.6;
+  }
+
+  const group = RELATED_SUBJECTS.find((subjects) => subjects.includes(subject));
+  if (group !== undefined && teaching.some((t) => group.includes(t.subject))) {
+    return 0.4;
+  }
+  return 0.1;
 }
 
 /**
@@ -68,7 +88,25 @@ export function classFamiliarity(
   shift: Shift,
   shiftDate: string,
 ): number {
-  throw new Error("TODO");
+  if (stats === null || shift.className === null) {
+    return 0;
+  }
+
+  const visits = stats.classVisits.find(
+    (v) => v.schoolId === shift.schoolId && v.className === shift.className,
+  );
+  if (visits === undefined) {
+    return 0;
+  }
+
+  // YYYY-MM-DD strings sort like dates, so < means "before".
+  let weighted = 0;
+  for (const date of visits.dates) {
+    if (date < shiftDate) {
+      weighted += 0.5 ** (daysBetween(date, shiftDate) / HALF_LIFE_DAYS);
+    }
+  }
+  return 1 - Math.exp(-weighted / FAMILIARITY_SATURATION);
 }
 
 /**
@@ -78,7 +116,17 @@ export function classFamiliarity(
  * The arrays start on Monday, so use index weekday - 1.
  */
 export function acceptLikelihood(stats: SubstituteStats | null, weekday: number): number {
-  throw new Error("TODO");
+  if (stats === null) {
+    return PRIOR;
+  }
+
+  const overall =
+    (stats.offersAccepted + PRIOR_WEIGHT * PRIOR) / (stats.offersTotal + PRIOR_WEIGHT);
+
+  const offeredThatDay = stats.offeredByWeekday[weekday - 1] ?? 0;
+  const acceptedThatDay = stats.acceptedByWeekday[weekday - 1] ?? 0;
+
+  return clamp01((acceptedThatDay + PRIOR_WEIGHT * overall) / (offeredThatDay + PRIOR_WEIGHT));
 }
 
 /**
@@ -86,7 +134,11 @@ export function acceptLikelihood(stats: SubstituteStats | null, weekday: number)
  * Every missing part (no stats, or the field is null) counts as 0.5.
  */
 export function reliability(stats: SubstituteStats | null): number {
-  throw new Error("TODO");
+  const attendance = stats?.attendanceRate ?? PRIOR;
+  const lateCancellations = stats?.lateCancellationRate ?? PRIOR;
+  const rating = stats?.schoolRating == null ? PRIOR : stats.schoolRating / 5;
+
+  return clamp01(0.6 * attendance + 0.2 * (1 - lateCancellations) + 0.2 * rating);
 }
 
 /**
@@ -99,7 +151,10 @@ export function fairness(
   stats: SubstituteStats | null,
   pool: PoolStats,
 ): number {
-  throw new Error("TODO");
+  const expected = substitute.preferences.maxDaysPerWeek / Math.max(1, pool.desiredDaysTotal);
+  const actual = (stats?.assignmentsLast30Days ?? 0) / Math.max(1, pool.assignmentsLast30DaysTotal);
+
+  return clamp01(0.5 + (expected - actual) * FAIRNESS_SCALE);
 }
 
 /**
@@ -110,22 +165,48 @@ export function fairness(
  * An empty list means no preference and gives 1. A shift without grade gives 1.
  */
 export function preferenceMatch(substitute: Substitute, shift: Shift, timeZone: string): number {
-  throw new Error("TODO");
+  const preferences = substitute.preferences;
+  const start = toLocal(shift.startsAt, timeZone);
+  const end = toLocal(shift.endsAt, timeZone);
+
+  const weekdayFits =
+    preferences.weekdays.length === 0 || preferences.weekdays.includes(start.weekday);
+
+  const timeFits =
+    start.minutes >= minutesOfDay(preferences.earliestStart) &&
+    end.minutes <= minutesOfDay(preferences.latestEnd);
+
+  const gradeFits =
+    preferences.preferredGrades.length === 0 ||
+    shift.grade === null ||
+    preferences.preferredGrades.includes(shift.grade);
+
+  return ((weekdayFits ? 1 : 0.3) + (timeFits ? 1 : 0.2) + (gradeFits ? 1 : 0.5)) / 3;
 }
 
 /** clamp01(1 - travelMinutes / 45). */
 export function proximity(travelMinutes: number = DEFAULT_TRAVEL_MINUTES): number {
-  throw new Error("TODO");
+  return clamp01(1 - travelMinutes / MAX_TRAVEL_MINUTES);
 }
 
 /** Fewer than 10 offers: 0.05 * (1 - offers / 10). Otherwise 0. No stats means 0 offers. */
 export function explorationBonus(stats: SubstituteStats | null): number {
-  throw new Error("TODO");
+  const offers = stats?.offersTotal ?? 0;
+  if (offers >= EXPLORATION_OFFERS) {
+    return 0;
+  }
+  return EXPLORATION_BONUS * (1 - offers / EXPLORATION_OFFERS);
 }
 
 /** Sums over all candidates, see PoolStats. */
 export function poolStats(candidates: readonly Candidate[]): PoolStats {
-  throw new Error("TODO");
+  let desiredDaysTotal = 0;
+  let assignmentsLast30DaysTotal = 0;
+  for (const candidate of candidates) {
+    desiredDaysTotal += candidate.substitute.preferences.maxDaysPerWeek;
+    assignmentsLast30DaysTotal += candidate.stats?.assignmentsLast30Days ?? 0;
+  }
+  return { desiredDaysTotal, assignmentsLast30DaysTotal };
 }
 
 /**
@@ -139,5 +220,30 @@ export function scoreCandidate(
   input: MatchingInput,
   pool: PoolStats,
 ): ScoreResult {
-  throw new Error("TODO");
+  const { substitute, stats } = candidate;
+  const shift = context.toFill.shift;
+  const weekday = toLocal(shift.startsAt, input.timeZone).weekday;
+
+  const components: ScoreComponents = {
+    subjectMatch: subjectMatch(substitute, shift),
+    classFamiliarity: classFamiliarity(stats, shift, context.date),
+    acceptLikelihood: acceptLikelihood(stats, weekday),
+    reliability: reliability(stats),
+    fairness: fairness(substitute, stats, pool),
+    preferenceMatch: preferenceMatch(substitute, shift, input.timeZone),
+    proximity: proximity(),
+  };
+
+  const weights = input.config.weights;
+  const weightedSum =
+    weights.subjectMatch * components.subjectMatch +
+    weights.classFamiliarity * components.classFamiliarity +
+    weights.acceptLikelihood * components.acceptLikelihood +
+    weights.reliability * components.reliability +
+    weights.fairness * components.fairness +
+    weights.preferenceMatch * components.preferenceMatch +
+    weights.proximity * components.proximity;
+
+  const total = clamp01(weightedSum + explorationBonus(stats));
+  return { score: Math.round(total * 10_000) / 100, components };
 }
