@@ -162,10 +162,7 @@ class HardFilters {
       unique: true,
     ),
     formalCompetence: r.object('formalCompetence', FormalCompetenceRule._read),
-    maxOpenOffersPerSubstitute: r.integer(
-      'maxOpenOffersPerSubstitute',
-      min: 1,
-    ),
+    maxOpenOffersPerSubstitute: r.integer('maxOpenOffersPerSubstitute', min: 1),
   );
 
   final bool roleMatch;
