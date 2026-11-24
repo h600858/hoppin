@@ -1,6 +1,6 @@
 # Status
 
-Sist oppdatert: 2026-11-19
+Sist oppdatert: 2026-11-24
 
 ## Gjort
 
@@ -38,17 +38,34 @@ Sist oppdatert: 2026-11-19
 - **2.6:** seed for Bjørkelia skole (`npm run seed`), data i
   `shared/fixtures/bjorkelia/`, validert og sjekket for sammenheng i testene.
 
+**Steg 3: Matchemotoren** er ferdig (decisions/0008), i `functions/src/matching/`:
+
+- **3.1:** typer, sjekk av konfigurasjonen, lokal tid med sommertid, hastegrad.
+  Nytt skjema `substituteStats`, og `formalCompetence` og
+  `maxOpenOffersPerSubstitute` i `schoolConfigs.filters`.
+- **3.2:** ni harde filtre i fast rekkefølge, med `open_offer` som nytt filter.
+- **3.3:** poengfunksjonen med sju ledd og bonus for nye vikarer.
+- **3.4:** egen min-kostnad maks-flyt, testet mot brute force.
+- **3.5:** `match()` med forrang for akutte oppdrag og deterministiske
+  uavgjort-regler, `canonicalInput()` for input-hashen. Beviset: seks klasser mot
+  tjue kandidater, høyere totalscore enn grådig og ingen dobbelt spurt.
+- **3.6:** korte norske begrunnelser til vikaren og til skolen, uten fritekst fra
+  input (regel 11).
+
 ## Neste steg
 
-1. Verifiser og commit Dart-modellene (se over).
-2. Kjør `npm run seed` mot emulatoren og se dataene i Emulator UI.
-3. **Steg 3: Matchemotoren** i `functions/src/matching/`, med tester først.
+**Steg 4:** `runMatching`, `claimShift`, `undoClaim`, `declineOffer` og
+Firestore-reglene. Inkluderer `transitionShift`, lagring i `decisions` med SHA-256
+av `canonicalInput()`, og validering av callable-input med `validateCallable`.
 
 ## Kjente problemer
 
 - Flutter 3.29.3 / Dart 3.7.2 lokalt og i CI. `flutter upgrade` er ikke gjort. Når den
   gjøres: oppdater `sdk` i alle pubspec-filene og `flutter-version` i CI.
 - Appene viser bare en midlertidig tilkoblingsskjerm. Tittelen er fortsatt «Hoppin».
+- Nærhet i poengfunksjonen bruker 20 minutter reisetid for alle til vi har data.
+- Vitest varsler om ESM-syntaks i `vitest.config.ts` i en CommonJS-pakke. Det er
+  bare en advarsel, men kan ryddes ved å gi filen navnet `vitest.config.mts`.
 - Node 24 er preview i Cloud Functions (se decisions/0003 og open-questions 9).
 - Ingen deploy-oppsett ennå. Kommer i steg 12.
 - `npm install` på Windows kan skrive en ufullstendig `functions/package-lock.json`

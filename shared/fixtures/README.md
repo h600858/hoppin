@@ -9,4 +9,5 @@ JSON som brukes av både Dart- og TypeScript-testene. All data er fiktiv.
   respons i `shared/schema/callables.json`.
 - `bjorkelia/`: seed-dataene for Bjørkelia skole, én fil per samling (se
   `scripts/seed/`).
-- Matchetilfeller kommer i steg 3.
+- Matchetilfellene i steg 3 bygges i kode med byggerne i
+  `functions/src/testing/matching_builders.ts`, og bruker Bjørkelia-dataene herfra.
